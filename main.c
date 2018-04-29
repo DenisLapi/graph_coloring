@@ -3,6 +3,11 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    int num_of_nodes = 0;
+
+    printf("Enter the number of nodes: ");
+    scanf("%d", &num_of_nodes);
+
+
     return 0;
 }
