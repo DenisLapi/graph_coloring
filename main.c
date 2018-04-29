@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/// Functions declarations
 void create_graph(int *graph_matrix, int num_of_nodes);
+void show_graph_matrix(int *graph_matrix, int num_of_nodes);
 
 int main()
 {
