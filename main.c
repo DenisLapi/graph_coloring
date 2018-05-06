@@ -2,14 +2,15 @@
 #include <stdlib.h>
 
 /// Functions declarations
+void algorithm_menu(int *graph_matrix, int num_of_nodes);
 void create_graph(int *graph_matrix, int num_of_nodes);
 void show_graph_matrix(int *graph_matrix, int num_of_nodes);
-int graph_min_colors(int *graph_matrix, int num_of_nodes);
+
+int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes);
 
 int main()
 {
     int num_of_nodes = 0;
-    int min_colors;
     int *graph_matrix;
 
     /// Get how much number we will have in our graph
@@ -25,10 +26,8 @@ int main()
     /// Show the graph_matrix;
     show_graph_matrix(graph_matrix, num_of_nodes);
 
-    /// Start the coloring
-    min_colors = graph_min_colors(graph_matrix, num_of_nodes);
-
-    printf("\n\n\nWe need minimum %d colors to color the graph", min_colors);
+    /// Show the menu to select the algorithm
+    algorithm_menu(graph_matrix, num_of_nodes);
 
     return 0;
 }
@@ -70,7 +69,7 @@ void show_graph_matrix(int *graph_matrix, int num_of_nodes) {
 }
 
 
-int graph_min_colors(int *graph_matrix, int num_of_nodes) {
+int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
 
     /// Function returns the minimum number of colors used to color the graph
     int node_row;
@@ -120,6 +119,28 @@ int graph_min_colors(int *graph_matrix, int num_of_nodes) {
         }
 
     }
-
     return min_colors;
+}
+
+void algorithm_menu(int *graph_matrix, int num_of_nodes) {
+
+    int min_colors = 0;
+    int menu_decision = 0;
+
+    printf("\nSelect the algorithm for solving graph coloring problem :\n1) - Backtracing\n2) - Welsh-Powell\n\nEnter algorithm number: ");
+    scanf("%d", &menu_decision);
+
+    switch(menu_decision) {
+        case 1:
+
+            printf("You selected the Backtracing algorithm");
+            min_colors = graph_min_colors_backtracing(graph_matrix, num_of_nodes);
+            printf("\n\nWe need minimum %d colors to color the graph", min_colors);
+            break;
+        case 2:
+            printf("\n\n[WARNING] Algorithm is not implemented yet");
+            break;
+        default:
+            printf("\n\n[ERROR] Option doesn't exist");
+    }
 }
