@@ -5,13 +5,27 @@
 void algorithm_menu(int *graph_matrix, int num_of_nodes);
 void create_graph(int *graph_matrix, int num_of_nodes);
 void show_graph_matrix(int *graph_matrix, int num_of_nodes);
-
 int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes);
+
+/// Node detail structure
+struct node_struct {
+    int id;
+    int sum_connection;
+    int color;
+};
 
 int main()
 {
+    int iterator;
+    int iterator_col;
+    int iterator_1;
+    int iterator_2;
     int num_of_nodes = 0;
+    int cell_value;
+    int aux_sum_connection;
+    int aux_color;
     int *graph_matrix;
+    int *graph_matrix_init;
 
     /// Get how much number we will have in our graph
     printf("Enter the number of nodes: ");
@@ -25,6 +39,51 @@ int main()
 
     /// Show the graph_matrix;
     show_graph_matrix(graph_matrix, num_of_nodes);
+
+    /// Create all nodes data with 3 properties
+    struct node_struct node_detail[num_of_nodes];
+    graph_matrix_init = graph_matrix;
+
+    for(iterator = 0; iterator < num_of_nodes; iterator++) {
+        node_detail[iterator].id = iterator;
+        node_detail[iterator].color = 0;
+        node_detail[iterator].sum_connection = 0;
+        for(iterator_col = 0; iterator_col < num_of_nodes; iterator_col++) {
+            cell_value = *graph_matrix_init;
+            if(cell_value != 0) {
+                node_detail[iterator].sum_connection++;
+            }
+            graph_matrix_init++;
+        }
+    }
+
+    printf("\nID\tColor\tSum of connections");
+    for(iterator = 0; iterator < num_of_nodes; iterator++) {
+        printf("\n%d\t%d\t\%d",node_detail[iterator].id, node_detail[iterator].color, node_detail[iterator].sum_connection);
+    }
+
+    /// Sort the nodes in descending order by number of connections per node
+    for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
+        for(iterator_2 = iterator_1 + 1; iterator_2 < num_of_nodes; iterator_2++) {
+            if(node_detail[iterator_1].sum_connection < node_detail[iterator_2].sum_connection) {
+
+                aux_color = node_detail[iterator_1].color;
+                aux_sum_connection = node_detail[iterator_1].sum_connection;
+
+                node_detail[iterator_1].color = node_detail[iterator_2].color;
+                node_detail[iterator_1].sum_connection = node_detail[iterator_2].sum_connection;
+
+                node_detail[iterator_2].color = aux_color;
+                node_detail[iterator_2].sum_connection = aux_sum_connection;
+            }
+        }
+    }
+
+    printf("\nModified:\n");
+    printf("\nID\tColor\tSum of connections");
+    for(iterator = 0; iterator < num_of_nodes; iterator++) {
+        printf("\n%d\t%d\t\%d",node_detail[iterator].id, node_detail[iterator].color, node_detail[iterator].sum_connection);
+    }
 
     /// Show the menu to select the algorithm
     algorithm_menu(graph_matrix, num_of_nodes);
@@ -43,7 +102,7 @@ void create_graph(int *graph_matrix, int num_of_nodes) {
     for(row = 0; row < num_of_nodes; row++) {
         for(col = 0; col < num_of_nodes; col++) {
             int is_connected;
-            printf("Is node %d connected with nnode %d: ", row, col);
+            printf("Is node %d connected with node %d: ", row, col);
             scanf("%d", &is_connected);
             *graph_matrix_init = is_connected;
             graph_matrix_init++;
