@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/// Functions declarations
-void algorithm_menu(int *graph_matrix, int num_of_nodes);
-void create_graph(int *graph_matrix, int num_of_nodes);
-void show_graph_matrix(int *graph_matrix, int num_of_nodes);
-int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes);
-
 /// Node detail structure
 struct node_struct {
     int id;
@@ -14,14 +8,18 @@ struct node_struct {
     int color;
 };
 
+/// Functions declarations
+void algorithm_menu(int *graph_matrix, int num_of_nodes);
+void create_graph(int *graph_matrix, int num_of_nodes);
+void show_graph_matrix(int *graph_matrix, int num_of_nodes);
+void show_nodes_data(struct node_struct *nodes, int num_of_nodes);
+int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes);
+
 int main()
 {
-    int iterator;
-    int iterator_col;
     int iterator_1;
     int iterator_2;
     int num_of_nodes = 0;
-    int cell_value;
     int aux_sum_connection;
     int aux_color;
     int *graph_matrix;
@@ -44,23 +42,20 @@ int main()
     struct node_struct node_detail[num_of_nodes];
     graph_matrix_init = graph_matrix;
 
-    for(iterator = 0; iterator < num_of_nodes; iterator++) {
-        node_detail[iterator].id = iterator;
-        node_detail[iterator].color = 0;
-        node_detail[iterator].sum_connection = 0;
-        for(iterator_col = 0; iterator_col < num_of_nodes; iterator_col++) {
-            cell_value = *graph_matrix_init;
-            if(cell_value != 0) {
-                node_detail[iterator].sum_connection++;
+    for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
+        node_detail[iterator_1].id = iterator_1;
+        node_detail[iterator_1].color = 0;
+        node_detail[iterator_1].sum_connection = 0;
+        for(iterator_2 = 0; iterator_2 < num_of_nodes; iterator_2++) {
+            if(*graph_matrix_init != 0) {
+                node_detail[iterator_1].sum_connection++;
             }
             graph_matrix_init++;
         }
     }
 
-    printf("\nID\tColor\tSum of connections");
-    for(iterator = 0; iterator < num_of_nodes; iterator++) {
-        printf("\n%d\t%d\t\%d",node_detail[iterator].id, node_detail[iterator].color, node_detail[iterator].sum_connection);
-    }
+    /// Show nodes before sort
+    show_nodes_data(&node_detail[0], num_of_nodes);
 
     /// Sort the nodes in descending order by number of connections per node
     for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
@@ -79,11 +74,9 @@ int main()
         }
     }
 
-    printf("\nModified:\n");
-    printf("\nID\tColor\tSum of connections");
-    for(iterator = 0; iterator < num_of_nodes; iterator++) {
-        printf("\n%d\t%d\t\%d",node_detail[iterator].id, node_detail[iterator].color, node_detail[iterator].sum_connection);
-    }
+    /// Show nodes after sort
+    printf("\n\nNodes sorted in descening order:\n");
+    show_nodes_data(&node_detail, num_of_nodes);
 
     /// Show the menu to select the algorithm
     algorithm_menu(graph_matrix, num_of_nodes);
@@ -97,7 +90,7 @@ void create_graph(int *graph_matrix, int num_of_nodes) {
     int col;
     int *graph_matrix_init = graph_matrix;
 
-    printf("\n\nPress number: \n\n1 - Connected nodes\n0 - Not connected nodes\n\n");
+    printf("\nPress number: \n\n1 - Connected nodes\n0 - Not connected nodes\n\n");
 
     for(row = 0; row < num_of_nodes; row++) {
         for(col = 0; col < num_of_nodes; col++) {
@@ -116,7 +109,7 @@ void show_graph_matrix(int *graph_matrix, int num_of_nodes) {
     int col;
     int *graph_matrix_init = graph_matrix;
 
-    printf("\n\n|----------- Graph Matrix -----------|\n\n");
+    printf("\n|----------- Graph Matrix -----------|\n\n");
     for(row = 0; row < num_of_nodes; row++) {
         for(col = 0; col < num_of_nodes; col++) {
             printf("%d ", *graph_matrix_init);
@@ -191,7 +184,6 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
 
     switch(menu_decision) {
         case 1:
-
             printf("You selected the Backtracing algorithm");
             min_colors = graph_min_colors_backtracing(graph_matrix, num_of_nodes);
             printf("\n\nWe need minimum %d colors to color the graph", min_colors);
@@ -201,5 +193,14 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
             break;
         default:
             printf("\n\n[ERROR] Option doesn't exist");
+    }
+}
+
+void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
+    int iterator;
+    printf("\nID\tColor\tSum of connections");
+    for(iterator = 0; iterator < num_of_nodes; iterator++) {
+        printf("\n%d\t%d\t\%d",nodes->id, nodes->color, nodes->sum_connection);
+        nodes++;
     }
 }
