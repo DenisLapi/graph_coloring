@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1525733176 source:c:\users\denis lapi\desktop\graph_coloring\main.c
+1526234990 source:c:\users\denis lapi\desktop\graph_coloring\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 

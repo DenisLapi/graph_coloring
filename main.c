@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /// Node detail structure
 struct node_struct {
@@ -9,11 +10,13 @@ struct node_struct {
 };
 
 /// Functions declarations
-void algorithm_menu(int *graph_matrix, int num_of_nodes);
+void algorithm_menu(int *graph_matrix, int num_of_nodes, struct node_struct *nodes);
 void create_graph(int *graph_matrix, int num_of_nodes);
 void show_graph_matrix(int *graph_matrix, int num_of_nodes);
 void show_nodes_data(struct node_struct *nodes, int num_of_nodes);
 int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes);
+int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes);
+int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes);
 
 int main()
 {
@@ -22,6 +25,7 @@ int main()
     int num_of_nodes = 0;
     int aux_sum_connection;
     int aux_color;
+    int aux_id;
     int *graph_matrix;
     int *graph_matrix_init;
 
@@ -44,7 +48,7 @@ int main()
 
     for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
         node_detail[iterator_1].id = iterator_1;
-        node_detail[iterator_1].color = 0;
+        node_detail[iterator_1].color = -1;
         node_detail[iterator_1].sum_connection = 0;
         for(iterator_2 = 0; iterator_2 < num_of_nodes; iterator_2++) {
             if(*graph_matrix_init != 0) {
@@ -62,12 +66,15 @@ int main()
         for(iterator_2 = iterator_1 + 1; iterator_2 < num_of_nodes; iterator_2++) {
             if(node_detail[iterator_1].sum_connection < node_detail[iterator_2].sum_connection) {
 
+                aux_id = node_detail[iterator_1].id;
                 aux_color = node_detail[iterator_1].color;
                 aux_sum_connection = node_detail[iterator_1].sum_connection;
 
+                node_detail[iterator_1].id = node_detail[iterator_2].id;
                 node_detail[iterator_1].color = node_detail[iterator_2].color;
                 node_detail[iterator_1].sum_connection = node_detail[iterator_2].sum_connection;
 
+                node_detail[iterator_2].id = aux_id;
                 node_detail[iterator_2].color = aux_color;
                 node_detail[iterator_2].sum_connection = aux_sum_connection;
             }
@@ -76,10 +83,10 @@ int main()
 
     /// Show nodes after sort
     printf("\n\nNodes sorted in descening order:\n");
-    show_nodes_data(&node_detail, num_of_nodes);
+    show_nodes_data(&node_detail[0], num_of_nodes);
 
     /// Show the menu to select the algorithm
-    algorithm_menu(graph_matrix, num_of_nodes);
+    algorithm_menu(graph_matrix, num_of_nodes, &node_detail[0]);
 
     return 0;
 }
@@ -165,7 +172,6 @@ int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
                         }
                     }
                 }
-
             }
             graph_matrix_init++;
         }
@@ -174,7 +180,70 @@ int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
     return min_colors;
 }
 
-void algorithm_menu(int *graph_matrix, int num_of_nodes) {
+int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes) {
+
+    int i;
+    int can_color = 1;
+    int col_iterator;
+    int colored_nodes = 0; // Count the number of colored nodes. Increase when node is colored
+    int min_colors = 0;    // Starting color is '1'
+    int row_id;
+    int cell_value;
+    int node_color;
+    int *graph_matrix_init = graph_matrix;
+
+    while(colored_nodes < num_of_nodes) {
+        min_colors++;
+        /// Select the node from 0 - num_of nodes
+        for(i = 0; i < num_of_nodes; i++) {
+            printf("\n");
+            /// If node doesn't have color set
+            if(nodes[i].color <= 0) {
+                /// Get the node ID (row number in the graph table)
+                row_id = nodes[i].id;
+                /// Go through the the row ID > columns
+                for(col_iterator = 0; col_iterator < num_of_nodes; col_iterator++) {
+                    /// Get the values from the column (row cell)
+                    cell_value = *(graph_matrix_init + ((row_id * num_of_nodes) + col_iterator));
+                    /// Check if nodes are conneted (row ID and column ID) : 0 - not connected; > 0 - connected
+                    if(cell_value > 0) {
+                        /// Nodes are connected get the color of the node that we compare
+                        node_color = get_node_color(col_iterator, nodes, num_of_nodes);
+                        /// Chech if color of the neighbor node is the same as current 'min_colors'
+                        if(node_color == min_colors) {
+                            can_color = 0;
+                        }
+                    }
+                }
+                if(can_color == 1) {
+                    nodes[i].color = min_colors;
+                    colored_nodes++;
+                }
+                can_color = 1;
+                graph_matrix_init = graph_matrix;
+            }
+        }
+        //waitFor(20);
+    }
+    return min_colors;
+}
+
+int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes) {
+
+    int color = -1;
+    int iterator;
+
+    for(iterator = 0; iterator < num_of_nodes; iterator++) {
+        if(nodes[iterator].id == node_id) {
+            color = nodes[iterator].color;
+            break;
+        }
+    }
+
+    return color;
+}
+
+void algorithm_menu(int *graph_matrix, int num_of_nodes, struct node_struct *nodes) {
 
     int min_colors = 0;
     int menu_decision = 0;
@@ -184,12 +253,15 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
 
     switch(menu_decision) {
         case 1:
-            printf("You selected the Backtracing algorithm");
+            printf("\nYou selected the Backtracing algorithm");
             min_colors = graph_min_colors_backtracing(graph_matrix, num_of_nodes);
             printf("\n\nWe need minimum %d colors to color the graph", min_colors);
             break;
         case 2:
-            printf("\n\n[WARNING] Algorithm is not implemented yet");
+            printf("\nYou selected the Welsh-Powell algorithm");
+            //printf("\n\n[WARNING] Algorithm is not implemented yet");
+            min_colors = graph_min_colors_welsh_powell(graph_matrix, num_of_nodes, nodes);
+            printf("\n\nWe need minimum %d colors to color the graph", min_colors);
             break;
         default:
             printf("\n\n[ERROR] Option doesn't exist");
@@ -203,4 +275,9 @@ void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
         printf("\n%d\t%d\t\%d",nodes->id, nodes->color, nodes->sum_connection);
         nodes++;
     }
+}
+
+void waitFor(unsigned int secs) {
+    unsigned int retTime = time(0) + secs;   // Get finishing time.
+    while (time(0) < retTime);               // Loop until it arrives.
 }

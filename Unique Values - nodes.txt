@@ -1,0 +1,32 @@
+//int unique_length = 0;
+    //int *unique_values = calloc(unique_length, sizeof(int));
+    //int *helper_unique;
+    
+    
+    /* 1) Get the unique array with sum connections
+    // Traverse the sorted array
+    for(i = 0; i < num_of_nodes; i++)
+    {
+       // Move the index ahead while there are duplicates
+       while (i < num_of_nodes-1 && nodes[i].sum_connection == nodes[i+1].sum_connection) {
+          i++;
+       }
+       // print last occurrence of the current element
+       unique_length++;
+       helper_unique = realloc(unique_values, unique_length * sizeof(int));
+       unique_values = helper_unique;
+       unique_values[unique_length - 1] = nodes[i].sum_connection;
+    }
+
+    printf("\nUnique array:\n");
+    for(i = 0; i < unique_length; i++) {
+        printf("%d | ", unique_values[i]);
+    }
+    printf("\n");
+   
+    /// Start the coloring 
+    for(i = 0; i < unique_length; i++) {
+        for(i = 0; j < num_of_nodes) {
+            
+        }
+    }*/
