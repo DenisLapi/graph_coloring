@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "backtracking.h"
-// #include "../../nodes/node_structure.h"
+#include "./backtracking.h"
 
 int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
 

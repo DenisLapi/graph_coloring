@@ -16,12 +16,7 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes, struct node_struct *nod
 
 int main()
 {
-    int iterator_1;
-    int iterator_2;
-    int num_of_nodes = 0;
-    int aux_sum_connection;
-    int aux_color;
-    int aux_id;
+    int num_of_nodes;
     int *graph_matrix;
     int *graph_matrix_init;
 
@@ -40,49 +35,25 @@ int main()
 
     /// Create all nodes data with 3 properties
     struct node_struct node_detail[num_of_nodes];
-    graph_matrix_init = graph_matrix;
 
-    for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
-        node_detail[iterator_1].id = iterator_1;
-        node_detail[iterator_1].color = -1;
-        node_detail[iterator_1].sum_connection = 0;
-        for(iterator_2 = 0; iterator_2 < num_of_nodes; iterator_2++) {
-            if(*graph_matrix_init != 0) {
-                node_detail[iterator_1].sum_connection++;
-            }
-            graph_matrix_init++;
-        }
-    }
-
+    create_nodes(&node_detail[0], num_of_nodes, graph_matrix);
+    
     /// Show nodes before sort
     show_nodes_data(&node_detail[0], num_of_nodes);
 
     /// Sort the nodes in descending order by number of connections per node
-    for(iterator_1 = 0; iterator_1 < num_of_nodes; iterator_1++) {
-        for(iterator_2 = iterator_1 + 1; iterator_2 < num_of_nodes; iterator_2++) {
-            if(node_detail[iterator_1].sum_connection < node_detail[iterator_2].sum_connection) {
-
-                aux_id = node_detail[iterator_1].id;
-                aux_color = node_detail[iterator_1].color;
-                aux_sum_connection = node_detail[iterator_1].sum_connection;
-
-                node_detail[iterator_1].id = node_detail[iterator_2].id;
-                node_detail[iterator_1].color = node_detail[iterator_2].color;
-                node_detail[iterator_1].sum_connection = node_detail[iterator_2].sum_connection;
-
-                node_detail[iterator_2].id = aux_id;
-                node_detail[iterator_2].color = aux_color;
-                node_detail[iterator_2].sum_connection = aux_sum_connection;
-            }
-        }
-    }
+    sort_nodes(&node_detail[0], num_of_nodes);
 
     /// Show nodes after sort
-    printf("\n\nNodes sorted in descening order:\n");
+    printf("\n\nNodes sorted in descending order:\n");
     show_nodes_data(&node_detail[0], num_of_nodes);
 
     /// Show the menu to select the algorithm
     algorithm_menu(graph_matrix, num_of_nodes, &node_detail[0]);
+
+    /// Show nodes after coloring
+    printf("\n\nNodes after coloring\n");
+    show_nodes_data(&node_detail[0], num_of_nodes);
 
     return 0;
 }
@@ -92,7 +63,7 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes, struct node_struct *nod
     int min_colors = 0;
     int menu_decision = 0;
 
-    printf("\nSelect the algorithm for solving graph coloring problem :\n1) - Backtracing\n2) - Welsh-Powell\n\nEnter algorithm number: ");
+    printf("\n\nSelect the algorithm for solving graph coloring problem :\n1) - Backtracing\n2) - Welsh-Powell\n\nEnter algorithm number: ");
     scanf("%d", &menu_decision);
 
     switch(menu_decision) {

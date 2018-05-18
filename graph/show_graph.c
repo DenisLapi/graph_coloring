@@ -8,7 +8,7 @@ void show_graph_matrix(int *graph_matrix, int num_of_nodes) {
     int col;
     int *graph_matrix_init = graph_matrix;
 
-    printf("\n|----------- Graph Matrix -----------|\n\n");
+    printf("\n|------ Graph Matrix ------|\n\n");
     for(row = 0; row < num_of_nodes; row++) {
         for(col = 0; col < num_of_nodes; col++) {
             printf("%d ", *graph_matrix_init);
@@ -16,5 +16,5 @@ void show_graph_matrix(int *graph_matrix, int num_of_nodes) {
         }
         printf("\n");
     }
-    printf("\n|------------------------------------|\n\n");
+    printf("\n|--------------------------|\n\n");
 }
