@@ -1,125 +1,118 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/// Functions declarations
-void create_graph(int *graph_matrix, int num_of_nodes);
-void show_graph_matrix(int *graph_matrix, int num_of_nodes);
-int graph_min_colors(int *graph_matrix, int num_of_nodes);
+// Loading modules
+#include "nodes/node_structure.h"
+#include "nodes/nodes.h"
+
+#include "algorithms/backtracking/backtracking.h"
+#include "algorithms/welsh_powell/welsh_powell.h"
+
+#include "graph/create_graph.h"
+#include "graph/show_graph.h"
+#include "graph/load_graph.h"
+
+void algorithm_menu(int *graph_matrix, int num_of_nodes);
 
 int main()
 {
-    int num_of_nodes = 0;
-    int min_colors;
+    int num_of_nodes = 1;
     int *graph_matrix;
-
-    /// Get how much number we will have in our graph
-    printf("Enter the number of nodes: ");
-    scanf("%d", &num_of_nodes);
+    int menu_option;
+    int is_env_selected = 0;
 
     /// Allocate the memory for graph matrix with N rows and N columns
-    graph_matrix = (int*)calloc(num_of_nodes * num_of_nodes, sizeof(int));
+    graph_matrix = (int*) calloc(num_of_nodes * num_of_nodes, sizeof(int));
 
-    /// Call the function to create the graph
-    create_graph(graph_matrix, num_of_nodes);
+    /// Let user to decide which environment wants to run
+    //  TEST   - Load dummy data from files located in the folder 'data'
+    //  CUSTOM - Create own graph 
 
-    /// Show the graph_matrix;
-    show_graph_matrix(graph_matrix, num_of_nodes);
+    printf("\nWhich environment you want to run: \n\n 1) - Test\n 2) - Custom\n\nEnter the number of environment: ");
+    scanf("%d", &menu_option);
 
-    /// Start the coloring
-    min_colors = graph_min_colors(graph_matrix, num_of_nodes);
+    /// Environment menu
 
-    printf("\n\n\nWe need minimum %d colors to color the graph", min_colors);
+    if(menu_option == 1) {
+
+        printf("\nYou chose the 'TEST' environment");
+        graph_matrix = load_graph(graph_matrix, &num_of_nodes);
+        is_env_selected = 1; 
+
+    } else if(menu_option == 2) {
+
+        printf("\nYou chose the 'CUSTOM' environment");   
+        printf("\n\nEnter the number of nodes: ");
+        scanf("%d", &num_of_nodes);
+        /// Call the function to create the graph (graph matrix need to be created every time)
+        graph_matrix = create_graph(graph_matrix, &num_of_nodes);
+        is_env_selected = 1;
+
+    } else {
+
+        printf("\nYou chose the invalid environment");
+
+    }
+
+    if(is_env_selected) {
+
+        /// Show the graph_matrix;
+        show_graph_matrix(graph_matrix, num_of_nodes);
+        /// Show the menu to select the algorithm
+        algorithm_menu(graph_matrix, num_of_nodes);
+
+    }
 
     return 0;
 }
 
-void create_graph(int *graph_matrix, int num_of_nodes) {
 
-    int row;
-    int col;
-    int *graph_matrix_init = graph_matrix;
+void algorithm_menu(int *graph_matrix, int num_of_nodes) {
 
-    printf("\n\nPress number: \n\n1 - Connected nodes\n0 - Not connected nodes\n\n");
+    int min_colors = 0;
+    int menu_decision = 0;
 
-    for(row = 0; row < num_of_nodes; row++) {
-        for(col = 0; col < num_of_nodes; col++) {
-            int is_connected;
-            printf("Is node %d connected with nnode %d: ", row, col);
-            scanf("%d", &is_connected);
-            *graph_matrix_init = is_connected;
-            graph_matrix_init++;
-        }
-    }
-}
-
-void show_graph_matrix(int *graph_matrix, int num_of_nodes) {
-
-    int row;
-    int col;
-    int *graph_matrix_init = graph_matrix;
-
-    printf("\n\n|----------- Graph Matrix -----------|\n\n");
-    for(row = 0; row < num_of_nodes; row++) {
-        for(col = 0; col < num_of_nodes; col++) {
-            printf("%d ", *graph_matrix_init);
-            graph_matrix_init++;
-        }
-        printf("\n");
-    }
-    printf("\n|------------------------------------|\n\n");
-}
+    printf("\n\nSelect the algorithm for solving graph coloring problem :\n1) - Backtracing\n2) - Welsh-Powell\n\nEnter algorithm number: ");
+    scanf("%d", &menu_decision);
 
 
-int graph_min_colors(int *graph_matrix, int num_of_nodes) {
+    if(menu_decision == 1) {
+        
+        printf("\nYou selected the Backtracing algorithm");
+        min_colors = graph_min_colors_backtracing(graph_matrix, num_of_nodes);
+        printf("\n\nWe need minimum %d colors to color the graph", min_colors);
+    
+    } else if(menu_decision == 2) {
 
-    /// Function returns the minimum number of colors used to color the graph
-    int node_row;
-    int col;
-    int col_value;
-    int node_color[num_of_nodes];
-    int min_colors;
-    int start_color;
-    int *graph_matrix_init = graph_matrix;
+        printf("\nYou selected the Welsh-Powell algorithm\n");
 
-    /// Set the color of the first node to be '1'
-    //  NOTE: We can set any color to this node because its the first one who will be colored
-    node_color[0] = 1;
+        /// Create all nodes data with 3 properties (needed for 'Welsh-Powell' algorithm )
+        struct node_struct node_detail[num_of_nodes];
 
-    /// Set min_colors to be equal '1'
-    //  NOTE: Because of the first node we know that we will use minimum one color
-    min_colors = 1;
+        create_nodes(&node_detail[0], num_of_nodes, graph_matrix);
+        
+        /// Show nodes before sort
+        show_nodes_data(&node_detail[0], num_of_nodes);
 
-    /// Increase pointer start + number of nodes (columns)
-    //  NOTE: We will skip the first row, so we need to increase the starting pointer
-    graph_matrix_init += num_of_nodes;
+        /// Sort the nodes in descending order by number of connections per node
+        sort_nodes(&node_detail[0], num_of_nodes);
 
-    /// Start with searching and creating colors
-    for(node_row = 1; node_row < num_of_nodes; node_row++) {
+        /// Show nodes after sort
+        printf("\n\nNodes sorted in descending order:\n");
+        show_nodes_data(&node_detail[0], num_of_nodes);
 
-        start_color = 1;
-        node_color[node_row] = start_color;
 
-        for(col = 0; col < num_of_nodes; col++) {
+        min_colors = graph_min_colors_welsh_powell(graph_matrix, num_of_nodes, &node_detail[0]);
+        printf("\n\nWe need minimum %d colors to color the graph", min_colors);
 
-            if(node_row != col) {
+        /// Show nodes after sort
+        printf("\n\nNodes after coloring:\n");
+        show_nodes_data(&node_detail[0], num_of_nodes);
 
-                col_value = *graph_matrix_init;
+    } else {
 
-                if(col_value != 0) {
-                    if(node_color[node_row] == node_color[col]) {
-                        start_color++;
-                        node_color[node_row] = start_color;
-                        if(start_color > min_colors) {
-                            min_colors = start_color;
-                        }
-                    }
-                }
-
-            }
-            graph_matrix_init++;
-        }
+        printf("\n\n[ERROR] Option doesn't exist. Try again! \n");
+        algorithm_menu(graph_matrix, num_of_nodes);
 
     }
-
-    return min_colors;
 }
