@@ -8,7 +8,7 @@ int *create_graph(int *graph_matrix, int *num_of_nodes) {
     int col;
     int new_size = (*num_of_nodes) * (*num_of_nodes);
     int *graph_matrix_init;
-    int *new_graph_matrix = (int*)realloc(graph_matrix, new_size * sizeof(int));
+    int *new_graph_matrix = (int*) realloc(graph_matrix, new_size * sizeof(int));
 
     graph_matrix = new_graph_matrix;
     graph_matrix_init = graph_matrix;

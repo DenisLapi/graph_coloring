@@ -10,8 +10,8 @@
 
 #include "graph/create_graph.h"
 #include "graph/show_graph.h"
+#include "graph/load_graph.h"
 
-/// Functions declarations
 void algorithm_menu(int *graph_matrix, int num_of_nodes);
 
 int main()
@@ -22,7 +22,7 @@ int main()
     int is_env_selected = 0;
 
     /// Allocate the memory for graph matrix with N rows and N columns
-    graph_matrix = (int*)calloc(num_of_nodes * num_of_nodes, sizeof(int));
+    graph_matrix = (int*) calloc(num_of_nodes * num_of_nodes, sizeof(int));
 
     /// Let user to decide which environment wants to run
     //  TEST   - Load dummy data from files located in the folder 'data'
@@ -36,9 +36,8 @@ int main()
     if(menu_option == 1) {
 
         printf("\nYou chose the 'TEST' environment");
-
-        // When code is finished set the variable below to 1
-        // is_env_selected = 1; 
+        graph_matrix = load_graph(graph_matrix, &num_of_nodes);
+        is_env_selected = 1; 
 
     } else if(menu_option == 2) {
 
@@ -47,7 +46,6 @@ int main()
         scanf("%d", &num_of_nodes);
         /// Call the function to create the graph (graph matrix need to be created every time)
         graph_matrix = create_graph(graph_matrix, &num_of_nodes);
-
         is_env_selected = 1;
 
     } else {
@@ -67,6 +65,7 @@ int main()
 
     return 0;
 }
+
 
 void algorithm_menu(int *graph_matrix, int num_of_nodes) {
 
