@@ -6,7 +6,7 @@ void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
 
     int iterator;
     
-    printf("\nID\tColor\tSum of connections");
+    printf("\nNode ID\tColor\tNumber of connections");
 
     for(iterator = 0; iterator < num_of_nodes; iterator++) {
         printf("\n%d\t%d\t\%d",nodes->id, nodes->color, nodes->sum_connection);

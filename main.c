@@ -92,6 +92,7 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
         create_nodes(&node_detail[0], num_of_nodes, graph_matrix);
         
         /// Show nodes before sort
+        printf("\n\nNodes created for the graph:\n");
         show_nodes_data(&node_detail[0], num_of_nodes);
 
         /// Sort the nodes in descending order by number of connections per node
@@ -101,9 +102,8 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
         printf("\n\nNodes sorted in descending order:\n");
         show_nodes_data(&node_detail[0], num_of_nodes);
 
-
         min_colors = graph_min_colors_welsh_powell(graph_matrix, num_of_nodes, &node_detail[0]);
-        printf("\n\nWe need minimum %d colors to color the graph", min_colors);
+        printf("\n\nWe need minimum %d colors to color the graph", min_colors);   
 
         /// Show nodes after sort
         printf("\n\nNodes after coloring:\n");
