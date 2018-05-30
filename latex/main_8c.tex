@@ -1,0 +1,134 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}nodes/node\+\_\+structure.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nodes/nodes.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}algorithms/backtracking/backtracking.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}algorithms/welsh\+\_\+powell/welsh\+\_\+powell.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}graph/create\+\_\+graph.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}graph/show\+\_\+graph.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}graph/load\+\_\+graph.\+h\char`\"{}}\\*
+Include dependency graph for main.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_ac829ac6ba1d6dd0623ad0dc7bed19eac}{algorithm\+\_\+menu} (int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em This function will be used to give the posibility to the user to select the algorithm that he/she wants to use for resolving the graph coloring problem. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+v0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018-\/05-\/30
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]No common bugs in this project. Contact us if you find any of them \end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\index{main.\+c@{main.\+c}!algorithm\+\_\+menu@{algorithm\+\_\+menu}}
+\index{algorithm\+\_\+menu@{algorithm\+\_\+menu}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{algorithm\+\_\+menu(int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)}{algorithm_menu(int *graph_matrix, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void algorithm\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{graph\+\_\+matrix, }
+\item[{int}]{num\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_ac829ac6ba1d6dd0623ad0dc7bed19eac}{}\label{main_8c_ac829ac6ba1d6dd0623ad0dc7bed19eac}
+
+
+This function will be used to give the posibility to the user to select the algorithm that he/she wants to use for resolving the graph coloring problem. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$graph\+\_\+matrix} & This pointer parameter will be provided in to the functions for resolving graph problem {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable will be provided in to the functions for resolving graph problem. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
+\hline
+\end{DoxyParams}
+In this variable we are storing the minimum number of colors needed to color the graph
+
+In this variable we are storing the menu decision for the desired algorithm for resolving the problem
+
+Let user to enter the decision about the algorithm and save it in the variable
+
+Check the user algorithm option
+
+If user enter {\bfseries 1} resolve the problem using the {\bfseries Backtracing} algorithm
+
+Run the function and save the final result in to the variable
+
+If user enter {\bfseries 2} resolve the problem using the {\bfseries Welsh-\/\+Powell} algorithm
+
+Create all nodes data with 3 properties (needed for \textquotesingle{}Welsh-\/\+Powell\textquotesingle{} algorithm )
+
+Run the function to initialize the nodes with ID, Sum of connections and Color
+
+Show nodes before sort
+
+Sort the nodes in descending order by number of connections per node
+
+Show nodes after sort
+
+Run the function and save the final result in to the variable
+
+Show nodes after sort
+
+If user select the other number for algorithm \begin{DoxyWarning}{Warning}
+Algorithm options are {\bfseries 1} for {\bfseries Backtracing} {\bfseries 2} for {\bfseries Welsh-\/\+Powell} 
+\end{DoxyWarning}
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+Variable used to save the number of nodes of our graph
+
+Pointer to the graph matrix. In this pointer we will initialize the grapg matrix
+
+Variable used for the menu selection. To choose between {\bfseries Test} and {\bfseries Custom} environment
+
+Check if program environment is selected. If \textquotesingle{}T\+R\+UE\textquotesingle{} continue the program
+
+Allocate the memory for graph matrix with N rows and N columns
+
+Let user to decide which environment wants to run Test -\/ Load dummy data from files located in the folder {\bfseries data} Custom -\/ Create own graph
+
+Environment menu
+
+If user select the first environment {\bfseries Test} run the code below
+
+Save the return value from the \textquotesingle{}load\+\_\+graph\textquotesingle{} function in {\bfseries graph\+\_\+matrix} pointer
+
+Set variable to {\bfseries 1} -\/ means that environment is selected
+
+If user select the second environment {\bfseries Custom} run the code below
+
+Call the function to create the graph \begin{DoxyWarning}{Warning}
+Graph matrix need to be created for this environment using the {\bfseries create\+\_\+graph} function
+\end{DoxyWarning}
+Save the created graph in {\bfseries graph\+\_\+matrix} pointer
+
+Set variable to {\bfseries 1} -\/ means that environment is selected
+
+If user select the other number for environment \begin{DoxyWarning}{Warning}
+Environment options are {\bfseries 1} for {\bfseries T\+E\+ST} {\bfseries 2} for {\bfseries C\+U\+S\+T\+OM}
+\end{DoxyWarning}
+Show the graph\+\_\+matrix;
+
+Show the menu to select the algorithm
+
+At the end of the program remove the {\bfseries graph matrix} pointer from the memory 

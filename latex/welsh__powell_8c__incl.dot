@@ -1,0 +1,12 @@
+digraph "algorithms/welsh_powell/welsh_powell.c"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="algorithms/welsh_powell\l/welsh_powell.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="./../../nodes/node\l_structure.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$node__structure_8h.html",tooltip="C library with node structure details. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="./welsh_powell.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$welsh__powell_8h.html"];
+}

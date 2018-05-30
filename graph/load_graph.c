@@ -24,7 +24,7 @@ int *load_graph(int *graph_matrix, int *num_of_nodes) {
 
 		Solution for fixing the problem with the string with 'space'
 		LINK: https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx
-	
+
 	*/
 
 	scanf("%c",&temp); // temp statement to clear buffer
@@ -62,15 +62,15 @@ int *load_graph(int *graph_matrix, int *num_of_nodes) {
 		// Crete the pointer for iteration
 		graph_matrix_init = graph_matrix;
 
-		// Go through the graph matrix from file and create the 'graph_matrix_init' 
+		// Go through the graph matrix from file and create the 'graph_matrix_init'
 	    while( !feof(data) ) {
 
 	    	// Get the value from file as a string
 	    	fscanf(data, "%s", file_data);
-	    	
+
 	    	// Show matrix string as a number using 'atoi()'
 	    	// printf("%d,", atoi(file_data));
-	    	
+
 	    	// Convert string value to integer and add to matrix
 	    	*graph_matrix_init = atoi(file_data);
 
@@ -85,6 +85,7 @@ int *load_graph(int *graph_matrix, int *num_of_nodes) {
 	} else {
 
 		printf("File doesn't exist");
+		exit(0);
 
 	}
 

@@ -1,0 +1,24 @@
+digraph "main.c"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="main.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="nodes/node_structure.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$node__structure_8h.html",tooltip="C library with node structure details. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="nodes/nodes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$nodes_8h.html",tooltip="C library for manipulation with graph nodes. "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="algorithms/backtracking\l/backtracking.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$backtracking_8h.html"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="algorithms/welsh_powell\l/welsh_powell.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$welsh__powell_8h.html"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="graph/create_graph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$create__graph_8h.html"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="graph/show_graph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$show__graph_8h.html"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="graph/load_graph.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$load__graph_8h.html"];
+}
