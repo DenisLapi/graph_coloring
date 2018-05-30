@@ -44,7 +44,6 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
                 graph_matrix_init = graph_matrix;
             }
         }
-        //waitFor(20);
     }
     return min_colors;
 }
