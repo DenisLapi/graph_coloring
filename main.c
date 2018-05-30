@@ -63,6 +63,9 @@ int main()
 
     }
 
+    /// At the end of the program remove the 'graph matrix' pointer from the memory
+    free(graph_matrix);
+
     return 0;
 }
 
