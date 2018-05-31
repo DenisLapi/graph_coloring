@@ -9,11 +9,11 @@ Include dependency graph for nodes.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}{show\+\_\+nodes\+\_\+data} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes)
-\item 
+\begin{DoxyCompactList}\small\item\em This function shows the details for the nodes in one list. \end{DoxyCompactList}\item 
 void \hyperlink{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}{create\+\_\+nodes} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes, int $\ast$graph\+\_\+matrix)
-\item 
+\begin{DoxyCompactList}\small\item\em This function initialize/create the nodes with default values. \end{DoxyCompactList}\item 
 void \hyperlink{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{sort\+\_\+nodes} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function sort the nodes in descending order by sum of connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -26,7 +26,39 @@ void \hyperlink{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{sort\+\_\+nodes} (st
 \item[{int $\ast$}]{graph\+\_\+matrix}
 \end{DoxyParamCaption}
 )}\hypertarget{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}{}\label{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}
-\index{nodes.\+c@{nodes.\+c}!show\+\_\+nodes\+\_\+data@{show\+\_\+nodes\+\_\+data}}
+
+
+This function initialize/create the nodes with default values. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable will be provided in to the functions for resolving graph problem. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
+\hline
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
+\hline
+\end{DoxyParams}
+Iterator\+\_\+1 -\/ Iterate through the nodes
+
+Iterator\+\_\+2 -\/ Iterate through the rows and columns of the graph matrix
+
+Copy of the \textquotesingle{}graph\+\_\+matrix\textquotesingle{}
+
+Set node {\bfseries ID}
+
+Set node default color {\bfseries -\/1} -\/ not colored
+
+Set the sum of connections to {\bfseries 0} -\/ default
+
+Iterate through the graph matrix and check for number of connections of the node
+
+If matrix value is not 0 -\/ means that nodes are connected
+
+Increase the number of connections \index{nodes.\+c@{nodes.\+c}!show\+\_\+nodes\+\_\+data@{show\+\_\+nodes\+\_\+data}}
 \index{show\+\_\+nodes\+\_\+data@{show\+\_\+nodes\+\_\+data}!nodes.\+c@{nodes.\+c}}
 \subsubsection[{\texorpdfstring{show\+\_\+nodes\+\_\+data(struct node\+\_\+struct $\ast$nodes, int num\+\_\+of\+\_\+nodes)}{show_nodes_data(struct node_struct *nodes, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+nodes\+\_\+data (
 \begin{DoxyParamCaption}
@@ -34,7 +66,25 @@ void \hyperlink{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{sort\+\_\+nodes} (st
 \item[{int}]{num\+\_\+of\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}{}\label{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}
-\index{nodes.\+c@{nodes.\+c}!sort\+\_\+nodes@{sort\+\_\+nodes}}
+
+
+This function shows the details for the nodes in one list. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable will be provided in to the functions for resolving graph problem. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
+\hline
+\end{DoxyParams}
+Helper variable used to iteration through the nodes
+
+Iterate and show the nodes
+
+Increase the position of the pointer \index{nodes.\+c@{nodes.\+c}!sort\+\_\+nodes@{sort\+\_\+nodes}}
 \index{sort\+\_\+nodes@{sort\+\_\+nodes}!nodes.\+c@{nodes.\+c}}
 \subsubsection[{\texorpdfstring{sort\+\_\+nodes(struct node\+\_\+struct $\ast$nodes, int num\+\_\+of\+\_\+nodes)}{sort_nodes(struct node_struct *nodes, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void sort\+\_\+nodes (
 \begin{DoxyParamCaption}
@@ -42,3 +92,40 @@ void \hyperlink{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{sort\+\_\+nodes} (st
 \item[{int}]{num\+\_\+of\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{}\label{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}
+
+
+This function sort the nodes in descending order by sum of connections. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable will be provided in to the functions for resolving graph problem. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
+\hline
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
+\hline
+\end{DoxyParams}
+Iterate through the all nodes
+
+Iterate through the all nodes to compare with selected node
+
+Save the sum of connections for the node
+
+Save the color for the node
+
+Save ID for the node
+
+{\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE}\+: Iterate through the node and compare with other nodes
+
+Iteratete through the rest of nodes and compare with {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE}
+
+If number of connections of the {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE} is smaller then other node change the positions of the nodes
+
+Save the values for the {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE} in aux variables
+
+Replace the values of the first node with the second node
+
+Replace the values of the second node with aux variables 
