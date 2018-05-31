@@ -9,9 +9,9 @@ Include dependency graph for welsh\+\_\+powell.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{welsh__powell_8c_a11628a447af7144c4403381b2a81733b}{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell} (int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes, struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes)
-\item 
+\begin{DoxyCompactList}\small\item\em This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Welsh Powell}} algorithm. \end{DoxyCompactList}\item 
 int \hyperlink{welsh__powell_8c_a808b204d533778d19726e365f3925ba0}{get\+\_\+node\+\_\+color} (int node\+\_\+id, struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function return the value of the color for the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -24,7 +24,28 @@ int \hyperlink{welsh__powell_8c_a808b204d533778d19726e365f3925ba0}{get\+\_\+node
 \item[{int}]{num\+\_\+of\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{welsh__powell_8c_a808b204d533778d19726e365f3925ba0}{}\label{welsh__powell_8c_a808b204d533778d19726e365f3925ba0}
-\index{welsh\+\_\+powell.\+c@{welsh\+\_\+powell.\+c}!graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell@{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}}
+
+
+This function return the value of the color for the node. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em node\+\_\+id} & Input variable used to identify the ID of the node we want to get the color \\
+\hline
+{\em $\ast$nodes} & This variable is used for the iteration through the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+color Return the color of the node with ID passed in the function 
+\end{DoxyReturn}
+Default value for color
+
+Return the color of the node \index{welsh\+\_\+powell.\+c@{welsh\+\_\+powell.\+c}!graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell@{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}}
 \index{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell@{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}!welsh\+\_\+powell.\+c@{welsh\+\_\+powell.\+c}}
 \subsubsection[{\texorpdfstring{graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell(int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes, struct node\+\_\+struct $\ast$nodes)}{graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}int graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell (
 \begin{DoxyParamCaption}
@@ -33,6 +54,25 @@ int \hyperlink{welsh__powell_8c_a808b204d533778d19726e365f3925ba0}{get\+\_\+node
 \item[{struct {\bf node\+\_\+struct} $\ast$}]{nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{welsh__powell_8c_a11628a447af7144c4403381b2a81733b}{}\label{welsh__powell_8c_a11628a447af7144c4403381b2a81733b}
+
+
+This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Welsh Powell}} algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+\hline
+{\em $\ast$nodes} & This variable is used for the iteration through the nodes with properties \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+min\+\_\+colors -\/ Minimum number of colors for coloring graph nodes determined by the algorithm 
+\end{DoxyReturn}
 Select the node from 0 -\/ num\+\_\+of nodes
 
 If node doesn\textquotesingle{}t have color set
@@ -47,4 +87,8 @@ Check if nodes are conneted (row ID and column ID) \+: 0 -\/ not connected; $>$ 
 
 Nodes are connected get the color of the node that we compare
 
-Chech if color of the neighbor node is the same as current \textquotesingle{}min\+\_\+colors\textquotesingle{} 
+Chech if color of the neighbor node is the same as current \textquotesingle{}min\+\_\+colors\textquotesingle{}
+
+If node can be colored with min color set the color
+
+Return minumum number of colors when algorithm is finished 

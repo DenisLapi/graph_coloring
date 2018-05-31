@@ -130,7 +130,8 @@ int main()
 *  \param *graph_matrix This pointer parameter will be provided in to the functions for resolving graph problem
 *  <b>*graph_matrix</b> is initialize out of this function.
 *  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-  <b>num_of_nodes</b> is initialize out of this function.
+*  <b>num_of_nodes</b> is initialize out of this function.
+*  \return Nothing
 */
 void algorithm_menu(int *graph_matrix, int num_of_nodes) {
 

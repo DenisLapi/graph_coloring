@@ -2,6 +2,16 @@
 #include "./../../nodes/node_structure.h"
 #include "./welsh_powell.h"
 
+
+/*!
+*  \fn int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes)
+*  \brief This functions resolve the <i><b>Chromatic number</b></i> - graph coloring problem using the <i><b>Welsh Powell</b></i> algorithm
+*  \author Denis Lapadatovic
+*  \param *graph_matrix Using this parameter we have the access to the graph matrix. <b>*graph_matrix</b> is initialize out of this function.
+*  \param num_of_nodes This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function.
+*  \param *nodes This variable is used for the iteration through the nodes with properties
+*  \return min_colors - Minimum number of colors for coloring graph nodes determined by the algorithm
+*/
 int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes) {
 
     int i;
@@ -36,6 +46,7 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
                         }
                     }
                 }
+                /// If node can be colored with min color set the color
                 if(can_color == 1) {
                     nodes[i].color = min_colors;
                     colored_nodes++;
@@ -45,11 +56,22 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
             }
         }
     }
+    /// Return minumum number of colors when algorithm is finished
     return min_colors;
 }
 
+/*!
+*  \fn int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes)
+*  \brief This function return the value of the color for the node
+*  \author Denis Lapadatovic
+*  \param node_id Input variable used to identify the ID of the node we want to get the color
+*  \param *nodes This variable is used for the iteration through the nodes with properties
+*  \param num_of_nodes This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function.
+*  \return color Return the color of the node with ID passed in the function
+*/
 int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes) {
 
+    /// Default value for color
     int color = -1;
     int iterator;
 
@@ -59,6 +81,6 @@ int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes) {
             break;
         }
     }
-
+    /// Return the color of the node
     return color;
 }

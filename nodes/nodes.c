@@ -9,9 +9,10 @@
 *  \param *nodes This variable is used for the iteration and showing the nodes with properties
 *  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
   <b>num_of_nodes</b> is initialize out of this function.
+*  \return Nothing
 */
 void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
-    /// Helper variable used to iteration through the nodes
+    /// Helper variable used for iteration through the nodes
     int iterator;
 
     printf("\nNode ID\tColor\tNumber of connections");
@@ -31,6 +32,7 @@ void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
 *  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
 *  <b>num_of_nodes</b> is initialize out of this function.
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
+*  \return Nothing
 */
 void create_nodes(struct node_struct *nodes, int num_of_nodes, int *graph_matrix) {
 
@@ -70,6 +72,7 @@ void create_nodes(struct node_struct *nodes, int num_of_nodes, int *graph_matrix
 *  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
 *  <b>num_of_nodes</b> is initialize out of this function.
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
+*  \return Nothing
 */
 void sort_nodes(struct node_struct *nodes, int num_of_nodes) {
 

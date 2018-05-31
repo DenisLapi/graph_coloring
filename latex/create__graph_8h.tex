@@ -6,7 +6,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int $\ast$ \hyperlink{create__graph_8h_ad311e39e890510c5102d9e7cc98c6b61}{create\+\_\+graph} (int $\ast$graph\+\_\+matrix, int $\ast$num\+\_\+of\+\_\+nodes)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This functions create the graph matrix. User enter the data for the graph. This funtion is used in {\bfseries Custom} environment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -18,3 +18,39 @@ int $\ast$ \hyperlink{create__graph_8h_ad311e39e890510c5102d9e7cc98c6b61}{create
 \item[{int $\ast$}]{num\+\_\+of\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{create__graph_8h_ad311e39e890510c5102d9e7cc98c6b61}{}\label{create__graph_8h_ad311e39e890510c5102d9e7cc98c6b61}
+
+
+This functions create the graph matrix. User enter the data for the graph. This funtion is used in {\bfseries Custom} environment. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new\+\_\+graph\+\_\+matrix -\/ Pointer to the new created graph matrix 
+\end{DoxyReturn}
+Calculate the graph matrix size
+
+Realloc the size of graph matrix
+
+Create the helper variables
+
+Iterate through the graph matrix row
+
+Iterate through the graph matrix column
+
+Ask user to enter if node is conneted with another node
+
+Save the value in the graph matrix
+
+Increase the position of graph matrix pointer
+
+Return the pointer of the graph matrix. \begin{DoxyWarning}{Warning}
+Realloc() returns the pointer to the beginning of newly allocated memory. 
+\end{DoxyWarning}

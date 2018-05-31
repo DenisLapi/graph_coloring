@@ -103,16 +103,17 @@ Include dependency graph for backtracking.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acda4bda9ca94105a8e392319b81d1f93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="backtracking_8c.html#acda4bda9ca94105a8e392319b81d1f93">graph_min_colors_backtracing</a> (int *graph_matrix, int num_of_nodes)</td></tr>
-<tr class="separator:acda4bda9ca94105a8e392319b81d1f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c92c01fa54474a08e85cc2ba3c9c02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="backtracking_8c.html#a02c92c01fa54474a08e85cc2ba3c9c02">graph_min_colors_backtracing</a> (int *graph_matrix, int num_of_nodes)</td></tr>
+<tr class="memdesc:a02c92c01fa54474a08e85cc2ba3c9c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions resolve the <em><b>Chromatic number</b></em> - graph coloring problem using the <em><b>Backtracking</b></em> algorithm.  <a href="#a02c92c01fa54474a08e85cc2ba3c9c02">More...</a><br /></td></tr>
+<tr class="separator:a02c92c01fa54474a08e85cc2ba3c9c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="acda4bda9ca94105a8e392319b81d1f93"></a>
+<a class="anchor" id="a02c92c01fa54474a08e85cc2ba3c9c02"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int graph_min_colors_backtracing </td>
+          <td class="memname">graph_min_colors_backtracing </td>
           <td>(</td>
           <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>graph_matrix</em>, </td>
@@ -130,11 +131,32 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This functions resolve the <em><b>Chromatic number</b></em> - graph coloring problem using the <em><b>Backtracking</b></em> algorithm. </p>
+<dl class="section author"><dt>Author</dt><dd>Denis Lapadatovic </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*graph_matrix</td><td>Using this parameter we have the access to the graph matrix. <b>*graph_matrix</b> is initialize out of this function. </td></tr>
+    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>min_colors - Minimum number of colors for coloring graph nodes determined by the algorithm </dd></dl>
 <p>Function returns the minimum number of colors used to color the graph</p>
-<p>Set the color of the first node to be '1'</p>
-<p>Set min_colors to be equal '1'</p>
-<p>Increase pointer start + number of nodes (columns)</p>
-<p>Start with searching and creating colors </p>
+<p>Set the color of the first node to be '1' NOTE: We can set any color to this node because its the first one who will be colored</p>
+<p>Set min_colors to be equal '1' NOTE: Because of the first node we know that we will use minimum one color</p>
+<p>Increase pointer start + number of nodes (columns) NOTE: We will skip the first row, so we need to increase the starting pointer</p>
+<p>Start with searching and creating colors</p>
+<p>Set the first color to the node</p>
+<p>To through the graph matrix columns</p>
+<p>We don't need to compare the same row and column</p>
+<p>Get the column value from the graph matrix</p>
+<p>Check if value is not <b>0</b> </p><dl class="section warning"><dt>Warning</dt><dd>If value is 0 means that nodes are not conneted so we don't need to compare the colors</dd></dl>
+<p>If colors are the same, increase the start color</p>
+<p>Set the color to the node</p>
+<p>If start color is bigger then min colors means that we need more colors, so we need to increase the variable <b>min_colors</b></p>
+<p>Increase the position of the pointer</p>
+<p>Return minumum number of colors when algorithm is finished </p>
 
 </div>
 </div>
