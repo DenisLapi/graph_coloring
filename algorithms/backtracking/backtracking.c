@@ -26,7 +26,7 @@ int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
 
     /// Start with searching and creating colors
     for(node_row = 1; node_row < num_of_nodes; node_row++) {
-
+        
         start_color = 1;
         node_color[node_row] = start_color;
 
