@@ -1,0 +1,71 @@
+\hypertarget{backtracking_8c}{}\section{algorithms/backtracking/backtracking.c File Reference}
+\label{backtracking_8c}\index{algorithms/backtracking/backtracking.\+c@{algorithms/backtracking/backtracking.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}./backtracking.\+h\char`\"{}}\\*
+Include dependency graph for backtracking.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}{graph\+\_\+min\+\_\+colors\+\_\+backtracing} (int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Backtracking}} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{backtracking.\+c@{backtracking.\+c}!graph\+\_\+min\+\_\+colors\+\_\+backtracing@{graph\+\_\+min\+\_\+colors\+\_\+backtracing}}
+\index{graph\+\_\+min\+\_\+colors\+\_\+backtracing@{graph\+\_\+min\+\_\+colors\+\_\+backtracing}!backtracking.\+c@{backtracking.\+c}}
+\subsubsection[{\texorpdfstring{graph\+\_\+min\+\_\+colors\+\_\+backtracing(int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)}{graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}int graph\+\_\+min\+\_\+colors\+\_\+backtracing (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{graph\+\_\+matrix, }
+\item[{int}]{num\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}{}\label{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}
+
+
+This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Backtracking}} algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This parameter will give as the number of nodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum number of colors for coloring graph nodes determined by the algorithm 
+\end{DoxyReturn}
+Function returns the minimum number of colors used to color the graph
+
+Set min\+\_\+colors to be equal {\bfseries 1}
+
+{\bfseries N\+O\+TE}\+: Because of the first node we know that we will use minimum one color
+
+Increase pointer start + number of nodes (columns)
+
+{\bfseries N\+O\+TE}\+: We will skip the first row, so we need to increase the starting pointer
+
+Start with searching and creating colors
+
+Set the first color to the node
+
+To through the graph matrix columns
+
+We don\textquotesingle{}t need to compare the same row and column
+
+Get the column value from the graph matrix
+
+Check if value is not {\bfseries 0} \begin{DoxyWarning}{Warning}
+If value is 0 means that nodes are not conneted so we don\textquotesingle{}t need to compare the colors
+\end{DoxyWarning}
+If colors are the same, increase the start color
+
+Set the color to the node
+
+If start color is bigger then min colors means that we need more colors, so we need to increase the variable {\bfseries min\+\_\+colors}
+
+Increase the position of the pointer
+
+Return minimum number of colors when algorithm is finished 

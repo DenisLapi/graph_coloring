@@ -1,0 +1,70 @@
+\hypertarget{load__graph_8h}{}\section{graph/load\+\_\+graph.h File Reference}
+\label{load__graph_8h}\index{graph/load\+\_\+graph.\+h@{graph/load\+\_\+graph.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{load__graph_8h_ace34c219aa34ea4699c4f02abf89c81e}{load\+\_\+graph} (int $\ast$graph\+\_\+matrix, int $\ast$num\+\_\+of\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em This functions load the test graph matrix from the files. This funtion is used in {\bfseries Test} environment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{load\+\_\+graph.\+h@{load\+\_\+graph.\+h}!load\+\_\+graph@{load\+\_\+graph}}
+\index{load\+\_\+graph@{load\+\_\+graph}!load\+\_\+graph.\+h@{load\+\_\+graph.\+h}}
+\subsubsection[{\texorpdfstring{load\+\_\+graph(int $\ast$graph\+\_\+matrix, int $\ast$num\+\_\+of\+\_\+nodes)}{load_graph(int *graph_matrix, int *num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ load\+\_\+graph (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{graph\+\_\+matrix, }
+\item[{int $\ast$}]{num\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{load__graph_8h_ace34c219aa34ea4699c4f02abf89c81e}{}\label{load__graph_8h_ace34c219aa34ea4699c4f02abf89c81e}
+
+
+This functions load the test graph matrix from the files. This funtion is used in {\bfseries Test} environment. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+graph\+\_\+matrix -\/ Pointer to the new created graph matrix 
+\end{DoxyReturn}
+Solution for fixing the problem with the string with \char`\"{} \char`\"{} character \+: \href{https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx}{\tt Solution}
+
+temp statement to clear buffer
+
+Add path to variable
+
+Add extension to the file\+\_\+name
+
+Concat path folder with file name
+
+Open file with graph data
+
+First string (number) in the file is represents the number of nodes
+
+Calculate the size of new graph matrix
+
+Realloc the \textquotesingle{}graph\+\_\+matrix\textquotesingle{} variable and increase the size of it
+
+Initialite the primary graph matrix pointer with new created pointer
+
+Crete the pointer for iteration
+
+Go through the graph matrix from file and create the \textquotesingle{}graph\+\_\+matrix\+\_\+init\textquotesingle{}
+
+Get the value from file as a string
+
+Convert string value to integer and add to matrix
+
+Increment the position of pointer
+
+Close the file when reading is finished
+
+Restart the position the of helper variable 

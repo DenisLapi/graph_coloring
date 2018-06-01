@@ -1,0 +1,138 @@
+\hypertarget{nodes_8c}{}\section{nodes/nodes.c File Reference}
+\label{nodes_8c}\index{nodes/nodes.\+c@{nodes/nodes.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}./node\+\_\+structure.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nodes.\+h\char`\"{}}\\*
+Include dependency graph for nodes.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}{show\+\_\+nodes\+\_\+data} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em This function shows the details for the nodes in one list. \end{DoxyCompactList}\item 
+void \hyperlink{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}{create\+\_\+nodes} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes, int $\ast$graph\+\_\+matrix)
+\begin{DoxyCompactList}\small\item\em This function initialize/create the nodes with default values. \end{DoxyCompactList}\item 
+void \hyperlink{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{sort\+\_\+nodes} (struct \hyperlink{structnode__struct}{node\+\_\+struct} $\ast$nodes, int num\+\_\+of\+\_\+nodes)
+\begin{DoxyCompactList}\small\item\em This function sort the nodes in descending order by sum of connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{nodes.\+c@{nodes.\+c}!create\+\_\+nodes@{create\+\_\+nodes}}
+\index{create\+\_\+nodes@{create\+\_\+nodes}!nodes.\+c@{nodes.\+c}}
+\subsubsection[{\texorpdfstring{create\+\_\+nodes(struct node\+\_\+struct $\ast$nodes, int num\+\_\+of\+\_\+nodes, int $\ast$graph\+\_\+matrix)}{create_nodes(struct node_struct *nodes, int num_of_nodes, int *graph_matrix)}}]{\setlength{\rightskip}{0pt plus 5cm}void create\+\_\+nodes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node\+\_\+struct} $\ast$}]{nodes, }
+\item[{int}]{num\+\_\+of\+\_\+nodes, }
+\item[{int $\ast$}]{graph\+\_\+matrix}
+\end{DoxyParamCaption}
+)}\hypertarget{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}{}\label{nodes_8c_a770219b4f8fec8312bf7ff3e6efcdbdc}
+
+
+This function initialize/create the nodes with default values. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable give us the number of nodes. \\
+\hline
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+Iterator\+\_\+1 -\/ Iterate through the nodes
+
+Iterator\+\_\+2 -\/ Iterate through the rows and columns of the graph matrix
+
+Copy of the \textquotesingle{}graph\+\_\+matrix\textquotesingle{}
+
+Set node {\bfseries ID}
+
+Set node default color {\bfseries -\/1} -\/ not colored
+
+Set the sum of connections to {\bfseries 0} -\/ default
+
+Iterate through the graph matrix and check for number of connections of the node
+
+If matrix value is not 0 -\/ means that nodes are connected
+
+Increase the number of connections \index{nodes.\+c@{nodes.\+c}!show\+\_\+nodes\+\_\+data@{show\+\_\+nodes\+\_\+data}}
+\index{show\+\_\+nodes\+\_\+data@{show\+\_\+nodes\+\_\+data}!nodes.\+c@{nodes.\+c}}
+\subsubsection[{\texorpdfstring{show\+\_\+nodes\+\_\+data(struct node\+\_\+struct $\ast$nodes, int num\+\_\+of\+\_\+nodes)}{show_nodes_data(struct node_struct *nodes, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+nodes\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node\+\_\+struct} $\ast$}]{nodes, }
+\item[{int}]{num\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}{}\label{nodes_8c_a05490f6d51c2c61f6565847b5ecc89db}
+
+
+This function shows the details for the nodes in one list. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable give us the number of nodes. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+Helper variable used for iteration through the nodes
+
+Iterate and show the nodes
+
+Increase the position of the pointer \index{nodes.\+c@{nodes.\+c}!sort\+\_\+nodes@{sort\+\_\+nodes}}
+\index{sort\+\_\+nodes@{sort\+\_\+nodes}!nodes.\+c@{nodes.\+c}}
+\subsubsection[{\texorpdfstring{sort\+\_\+nodes(struct node\+\_\+struct $\ast$nodes, int num\+\_\+of\+\_\+nodes)}{sort_nodes(struct node_struct *nodes, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}void sort\+\_\+nodes (
+\begin{DoxyParamCaption}
+\item[{struct {\bf node\+\_\+struct} $\ast$}]{nodes, }
+\item[{int}]{num\+\_\+of\+\_\+nodes}
+\end{DoxyParamCaption}
+)}\hypertarget{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}{}\label{nodes_8c_a36befbae49c8af63dadf6a22cf1f2a61}
+
+
+This function sort the nodes in descending order by sum of connections. 
+
+\begin{DoxyAuthor}{Author}
+Denis Lapadatovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$nodes} & This variable is used for the iteration and showing the nodes with properties \\
+\hline
+{\em num\+\_\+of\+\_\+nodes} & This variable give us the number of nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+Iterate through the all nodes
+
+Iterate through the all nodes to compare with selected node
+
+Save the sum of connections for the node
+
+Save the color for the node
+
+Save ID for the node
+
+{\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE}\+: Iterate through the node and compare with other nodes
+
+Iteratete through the rest of nodes and compare with {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE}
+
+If number of connections of the {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE} is smaller then other node change the positions of the nodes
+
+Save the values for the {\bfseries S\+E\+L\+E\+C\+T\+ED N\+O\+DE} in aux variables
+
+Replace the values of the first node with the second node
+
+Replace the values of the second node with aux variables 

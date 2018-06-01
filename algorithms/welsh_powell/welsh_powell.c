@@ -2,13 +2,22 @@
 #include "./../../nodes/node_structure.h"
 #include "./welsh_powell.h"
 
+
+/*!
+*  \brief This functions resolve the <i><b>Chromatic number</b></i> - graph coloring problem using the <i><b>Welsh Powell</b></i> algorithm
+*  \author Denis Lapadatovic
+*  \param *graph_matrix Using this parameter we have the access to the graph matrix.
+*  \param num_of_nodes This parameter will be used to get the number of nodes.
+*  \param *nodes This variable is used for the iteration through the nodes with properties
+*  \return Minimum number of colors for coloring graph nodes determined by the algorithm
+*/
 int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct node_struct *nodes) {
 
     int i;
     int can_color = 1;
     int col_iterator;
     int colored_nodes = 0; // Count the number of colored nodes. Increase when node is colored
-    int min_colors = 0;    // Starting color is '1'
+    int min_colors = 0;    // Starting color is <b>1</b>
     int row_id;
     int cell_value;
     int node_color;
@@ -26,7 +35,7 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
                 for(col_iterator = 0; col_iterator < num_of_nodes; col_iterator++) {
                     /// Get the values from the column (row cell)
                     cell_value = *(graph_matrix_init + ((row_id * num_of_nodes) + col_iterator));
-                    /// Check if nodes are conneted (row ID and column ID) : 0 - not connected; > 0 - connected
+                    /// Check if nodes are conneted (row ID and column ID) : 0 - not connected | > 0 - connected
                     if(cell_value > 0) {
                         /// Nodes are connected get the color of the node that we compare
                         node_color = get_node_color(col_iterator, nodes, num_of_nodes);
@@ -36,6 +45,7 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
                         }
                     }
                 }
+                /// If node can be colored with min color set the color
                 if(can_color == 1) {
                     nodes[i].color = min_colors;
                     colored_nodes++;
@@ -44,13 +54,22 @@ int graph_min_colors_welsh_powell(int *graph_matrix, int num_of_nodes, struct no
                 graph_matrix_init = graph_matrix;
             }
         }
-        //waitFor(20);
     }
+    /// Return minimum number of colors when algorithm is finished
     return min_colors;
 }
 
+/*!
+*  \brief This function return the value of the color for the node
+*  \author Denis Lapadatovic
+*  \param node_id Input variable used to identify the node using the unique ID
+*  \param *nodes This variable is used for the iteration through the nodes with properties
+*  \param num_of_nodes This parameter will be used to get the number of nodes.
+*  \return The color of the node with ID passed in the function
+*/
 int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes) {
 
+    /// Default value for color
     int color = -1;
     int iterator;
 
@@ -60,6 +79,6 @@ int get_node_color(int node_id, struct node_struct *nodes, int num_of_nodes) {
             break;
         }
     }
-
+    /// Return the color of the node
     return color;
 }

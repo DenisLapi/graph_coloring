@@ -1,0 +1,13 @@
+digraph "algorithms" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c0ce462e37efe0a8d60c01d75f78f8a0 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_c0ce462e37efe0a8d60c01d75f78f8a0.html"];
+    dir_c0ce462e37efe0a8d60c01d75f78f8a0 [shape=plaintext label="algorithms"];
+    dir_cfc0653f2c40d856f36ed9240505c013 [shape=box label="backtracking" color="black" fillcolor="white" style="filled" URL="dir_cfc0653f2c40d856f36ed9240505c013.html"];
+    dir_c0cdf1932c6dda17d13088fcd11cba9b [shape=box label="welsh_powell" color="black" fillcolor="white" style="filled" URL="dir_c0cdf1932c6dda17d13088fcd11cba9b.html"];
+  }
+  dir_8637afc38b758fdb535647a385c49b5e [shape=box label="nodes" URL="dir_8637afc38b758fdb535647a385c49b5e.html"];
+  dir_c0cdf1932c6dda17d13088fcd11cba9b->dir_8637afc38b758fdb535647a385c49b5e [headlabel="1", labeldistance=1.5 headhref="dir_000002_000004.html"];
+}
