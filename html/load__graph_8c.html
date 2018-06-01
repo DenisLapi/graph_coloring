@@ -104,17 +104,17 @@ Include dependency graph for load_graph.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0e204154d11810a1bd857e15936dee36"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__graph_8c.html#a0e204154d11810a1bd857e15936dee36">load_graph</a> (int *graph_matrix, int *num_of_nodes)</td></tr>
-<tr class="memdesc:a0e204154d11810a1bd857e15936dee36"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions load the test graph matrix from the files. This funtion is used in <b>Test</b> environment.  <a href="#a0e204154d11810a1bd857e15936dee36">More...</a><br /></td></tr>
-<tr class="separator:a0e204154d11810a1bd857e15936dee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace34c219aa34ea4699c4f02abf89c81e"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__graph_8c.html#ace34c219aa34ea4699c4f02abf89c81e">load_graph</a> (int *graph_matrix, int *num_of_nodes)</td></tr>
+<tr class="memdesc:ace34c219aa34ea4699c4f02abf89c81e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions load the test graph matrix from the files. This funtion is used in <b>Test</b> environment.  <a href="#ace34c219aa34ea4699c4f02abf89c81e">More...</a><br /></td></tr>
+<tr class="separator:ace34c219aa34ea4699c4f02abf89c81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a0e204154d11810a1bd857e15936dee36"></a>
+<a class="anchor" id="ace34c219aa34ea4699c4f02abf89c81e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int * load_graph </td>
+          <td class="memname">int* load_graph </td>
           <td>(</td>
           <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>graph_matrix</em>, </td>
@@ -137,14 +137,13 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Denis Lapadatovic </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*graph_matrix</td><td>Using this parameter we have the access to the graph matrix. <b>*graph_matrix</b> is initialize out of this function. </td></tr>
-    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function. </td></tr>
+    <tr><td class="paramname">*graph_matrix</td><td>Using this parameter we have the access to the graph matrix. </td></tr>
+    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to add the number of nodes. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>graph_matrix - Pointer to the new created graph matrix </dd></dl>
-<p>*graph_matrix - In this pointer we will add the data from our file *num_of_nodes - In this pointer we will add the number of nodes from the file data, so this number can be accessible outside the function</p>
-<p>Solution for fixing the problem with the string with 'space' LINK: <a href="https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx">Solution</a></p>
+<p>Solution for fixing the problem with the string with " " character : <a href="https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx">Solution</a></p>
 <p>temp statement to clear buffer</p>
 <p>Add path to variable</p>
 <p>Add extension to the file_name</p>
@@ -157,7 +156,6 @@ Functions</h2></td></tr>
 <p>Crete the pointer for iteration</p>
 <p>Go through the graph matrix from file and create the 'graph_matrix_init'</p>
 <p>Get the value from file as a string</p>
-<p>Show matrix string as a number using 'atoi()' printf("%d,", atoi(file_data));</p>
 <p>Convert string value to integer and add to matrix</p>
 <p>Increment the position of pointer</p>
 <p>Close the file when reading is finished</p>

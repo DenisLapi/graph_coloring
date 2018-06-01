@@ -1,0 +1,123 @@
+\begin{theindex}
+
+  \item {algorithm\+\_\+menu}
+    \subitem {main.\+c}, \hyperpage{21}
+  \item {algorithms/backtracking/backtracking.\+c}, \hyperpage{11}
+  \item {algorithms/backtracking/backtracking.\+h}, \hyperpage{11}
+  \item {algorithms/welsh\+\_\+powell/welsh\+\_\+powell.\+c}, 
+		\hyperpage{12}
+  \item {algorithms/welsh\+\_\+powell/welsh\+\_\+powell.\+h}, 
+		\hyperpage{14}
+
+  \indexspace
+
+  \item {backtracking.\+h}
+    \subitem {graph\+\_\+min\+\_\+colors\+\_\+backtracing}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {color}
+    \subitem {node\+\_\+struct}, \hyperpage{9}
+  \item {create\+\_\+graph}
+    \subitem {create\+\_\+graph.\+c}, \hyperpage{15}
+    \subitem {create\+\_\+graph.\+h}, \hyperpage{16}
+  \item {create\+\_\+graph.\+c}
+    \subitem {create\+\_\+graph}, \hyperpage{15}
+  \item {create\+\_\+graph.\+h}
+    \subitem {create\+\_\+graph}, \hyperpage{16}
+  \item {create\+\_\+nodes}
+    \subitem {nodes.\+c}, \hyperpage{24}
+    \subitem {nodes.\+h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {get\+\_\+node\+\_\+color}
+    \subitem {welsh\+\_\+powell.\+c}, \hyperpage{12}
+    \subitem {welsh\+\_\+powell.\+h}, \hyperpage{14}
+  \item {graph/create\+\_\+graph.\+c}, \hyperpage{15}
+  \item {graph/create\+\_\+graph.\+h}, \hyperpage{16}
+  \item {graph/load\+\_\+graph.\+c}, \hyperpage{17}
+  \item {graph/load\+\_\+graph.\+h}, \hyperpage{18}
+  \item {graph/show\+\_\+graph.\+c}, \hyperpage{19}
+  \item {graph/show\+\_\+graph.\+h}, \hyperpage{20}
+  \item {graph\+\_\+min\+\_\+colors\+\_\+backtracing}
+    \subitem {backtracking.\+h}, \hyperpage{11}
+  \item {graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}
+    \subitem {welsh\+\_\+powell.\+c}, \hyperpage{13}
+    \subitem {welsh\+\_\+powell.\+h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {id}
+    \subitem {node\+\_\+struct}, \hyperpage{9}
+
+  \indexspace
+
+  \item {load\+\_\+graph}
+    \subitem {load\+\_\+graph.\+c}, \hyperpage{17}
+    \subitem {load\+\_\+graph.\+h}, \hyperpage{18}
+  \item {load\+\_\+graph.\+c}
+    \subitem {load\+\_\+graph}, \hyperpage{17}
+  \item {load\+\_\+graph.\+h}
+    \subitem {load\+\_\+graph}, \hyperpage{18}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\+c}, \hyperpage{22}
+  \item {main.\+c}, \hyperpage{21}
+    \subitem {algorithm\+\_\+menu}, \hyperpage{21}
+    \subitem {main}, \hyperpage{22}
+
+  \indexspace
+
+  \item {node\+\_\+struct}, \hyperpage{9}
+    \subitem {color}, \hyperpage{9}
+    \subitem {id}, \hyperpage{9}
+    \subitem {node\+\_\+structure.\+h}, \hyperpage{24}
+    \subitem {sum\+\_\+connection}, \hyperpage{10}
+  \item {node\+\_\+structure.\+h}
+    \subitem {node\+\_\+struct}, \hyperpage{24}
+  \item {nodes.\+c}
+    \subitem {create\+\_\+nodes}, \hyperpage{24}
+    \subitem {show\+\_\+nodes\+\_\+data}, \hyperpage{25}
+    \subitem {sort\+\_\+nodes}, \hyperpage{25}
+  \item {nodes.\+h}
+    \subitem {create\+\_\+nodes}, \hyperpage{27}
+    \subitem {show\+\_\+nodes\+\_\+data}, \hyperpage{27}
+    \subitem {sort\+\_\+nodes}, \hyperpage{28}
+  \item {nodes/node\+\_\+structure.\+h}, \hyperpage{23}
+  \item {nodes/nodes.\+c}, \hyperpage{24}
+  \item {nodes/nodes.\+h}, \hyperpage{26}
+
+  \indexspace
+
+  \item {show\+\_\+graph.\+c}
+    \subitem {show\+\_\+graph\+\_\+matrix}, \hyperpage{19}
+  \item {show\+\_\+graph.\+h}
+    \subitem {show\+\_\+graph\+\_\+matrix}, \hyperpage{20}
+  \item {show\+\_\+graph\+\_\+matrix}
+    \subitem {show\+\_\+graph.\+c}, \hyperpage{19}
+    \subitem {show\+\_\+graph.\+h}, \hyperpage{20}
+  \item {show\+\_\+nodes\+\_\+data}
+    \subitem {nodes.\+c}, \hyperpage{25}
+    \subitem {nodes.\+h}, \hyperpage{27}
+  \item {sort\+\_\+nodes}
+    \subitem {nodes.\+c}, \hyperpage{25}
+    \subitem {nodes.\+h}, \hyperpage{28}
+  \item {sum\+\_\+connection}
+    \subitem {node\+\_\+struct}, \hyperpage{10}
+
+  \indexspace
+
+  \item {welsh\+\_\+powell.\+c}
+    \subitem {get\+\_\+node\+\_\+color}, \hyperpage{12}
+    \subitem {graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}, 
+		\hyperpage{13}
+  \item {welsh\+\_\+powell.\+h}
+    \subitem {get\+\_\+node\+\_\+color}, \hyperpage{14}
+    \subitem {graph\+\_\+min\+\_\+colors\+\_\+welsh\+\_\+powell}, 
+		\hyperpage{14}
+
+\end{theindex}

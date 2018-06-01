@@ -2,13 +2,10 @@
 #include "show_graph.h"
 
 /*!
-*  \fn void show_graph_matrix(int *graph_matrix, int num_of_nodes)
 *  \brief This functions shows the graph matrix
 *  \author Denis Lapadatovic
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
-*  <b>*graph_matrix</b> is initialize out of this function.
-*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-*  <b>num_of_nodes</b> is initialize out of this function.
+*  \param num_of_nodes This parameter will be used to get the number of nodes.
 *  \return Nothing
 */
 void show_graph_matrix(int *graph_matrix, int num_of_nodes) {

@@ -2,14 +2,11 @@
 #include "./backtracking.h"
 
 /*!
-*  \fn graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes)
 *  \brief This functions resolve the <i><b>Chromatic number</b></i> - graph coloring problem using the <i><b>Backtracking</b></i> algorithm
 *  \author Denis Lapadatovic
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
-*  <b>*graph_matrix</b> is initialize out of this function.
-*  \param num_of_nodes This parameter will be used to add the number of nodes.
-*  <b>*num_of_nodes</b> is initialize in this function.
-*  \return min_colors - Minimum number of colors for coloring graph nodes determined by the algorithm
+*  \param num_of_nodes This parameter will give as the number of nodes
+*  \return Minimum number of colors for coloring graph nodes determined by the algorithm
 */
 
 int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
@@ -23,16 +20,28 @@ int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
     int start_color;
     int *graph_matrix_init = graph_matrix;
 
-    /// Set the color of the first node to be '1'
-    /// NOTE: We can set any color to this node because its the first one who will be colored
+    /*
+    * Set the color of the first node to be '1'
+    *
+    * <b>NOTE</b>: We can set any color to this node because its the first one who will be colored
+    *
+    */
     node_color[0] = 1;
 
-    /// Set min_colors to be equal '1'
-    /// NOTE: Because of the first node we know that we will use minimum one color
+    /*!
+    * Set min_colors to be equal <b>1</b>
+    *
+    * <b>NOTE</b>: Because of the first node we know that we will use minimum one color
+    *
+    */
     min_colors = 1;
 
-    /// Increase pointer start + number of nodes (columns)
-    /// NOTE: We will skip the first row, so we need to increase the starting pointer
+    /*!
+    * Increase pointer start + number of nodes (columns)
+    *
+    * <b>NOTE</b>: We will skip the first row, so we need to increase the starting pointer
+    *
+    */
     graph_matrix_init += num_of_nodes;
 
     /// Start with searching and creating colors
@@ -66,6 +75,6 @@ int graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes) {
         }
 
     }
-    /// Return minumum number of colors when algorithm is finished
+    /// Return minimum number of colors when algorithm is finished
     return min_colors;
 }

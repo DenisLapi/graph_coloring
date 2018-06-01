@@ -144,13 +144,13 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Denis Lapadatovic </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node_id</td><td>Input variable used to identify the ID of the node we want to get the color </td></tr>
+    <tr><td class="paramname">node_id</td><td>Input variable used to identify the node using the unique ID </td></tr>
     <tr><td class="paramname">*nodes</td><td>This variable is used for the iteration through the nodes with properties </td></tr>
-    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function. </td></tr>
+    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to get the number of nodes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>color Return the color of the node with ID passed in the function </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The color of the node with ID passed in the function </dd></dl>
 <p>Default value for color</p>
 <p>Return the color of the node </p>
 
@@ -190,23 +190,23 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Denis Lapadatovic </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*graph_matrix</td><td>Using this parameter we have the access to the graph matrix. <b>*graph_matrix</b> is initialize out of this function. </td></tr>
-    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to add the number of nodes. <b>*num_of_nodes</b> is initialize in this function. </td></tr>
+    <tr><td class="paramname">*graph_matrix</td><td>Using this parameter we have the access to the graph matrix. </td></tr>
+    <tr><td class="paramname">num_of_nodes</td><td>This parameter will be used to get the number of nodes. </td></tr>
     <tr><td class="paramname">*nodes</td><td>This variable is used for the iteration through the nodes with properties </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>min_colors - Minimum number of colors for coloring graph nodes determined by the algorithm </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Minimum number of colors for coloring graph nodes determined by the algorithm </dd></dl>
 <p>Select the node from 0 - num_of nodes</p>
 <p>If node doesn't have color set</p>
 <p>Get the node ID (row number in the graph table)</p>
 <p>Go through the the row ID &gt; columns</p>
 <p>Get the values from the column (row cell)</p>
-<p>Check if nodes are conneted (row ID and column ID) : 0 - not connected; &gt; 0 - connected</p>
+<p>Check if nodes are conneted (row ID and column ID) : 0 - not connected | &gt; 0 - connected</p>
 <p>Nodes are connected get the color of the node that we compare</p>
 <p>Chech if color of the neighbor node is the same as current 'min_colors'</p>
 <p>If node can be colored with min color set the color</p>
-<p>Return minumum number of colors when algorithm is finished </p>
+<p>Return minimum number of colors when algorithm is finished </p>
 
 </div>
 </div>

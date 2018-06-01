@@ -7,19 +7,19 @@ Include dependency graph for backtracking.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{backtracking_8c_a02c92c01fa54474a08e85cc2ba3c9c02}{graph\+\_\+min\+\_\+colors\+\_\+backtracing} (int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)
+int \hyperlink{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}{graph\+\_\+min\+\_\+colors\+\_\+backtracing} (int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)
 \begin{DoxyCompactList}\small\item\em This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Backtracking}} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
 \index{backtracking.\+c@{backtracking.\+c}!graph\+\_\+min\+\_\+colors\+\_\+backtracing@{graph\+\_\+min\+\_\+colors\+\_\+backtracing}}
 \index{graph\+\_\+min\+\_\+colors\+\_\+backtracing@{graph\+\_\+min\+\_\+colors\+\_\+backtracing}!backtracking.\+c@{backtracking.\+c}}
-\subsubsection[{\texorpdfstring{graph\+\_\+min\+\_\+colors\+\_\+backtracing(int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)}{graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}graph\+\_\+min\+\_\+colors\+\_\+backtracing (
+\subsubsection[{\texorpdfstring{graph\+\_\+min\+\_\+colors\+\_\+backtracing(int $\ast$graph\+\_\+matrix, int num\+\_\+of\+\_\+nodes)}{graph_min_colors_backtracing(int *graph_matrix, int num_of_nodes)}}]{\setlength{\rightskip}{0pt plus 5cm}int graph\+\_\+min\+\_\+colors\+\_\+backtracing (
 \begin{DoxyParamCaption}
 \item[{int $\ast$}]{graph\+\_\+matrix, }
 \item[{int}]{num\+\_\+of\+\_\+nodes}
 \end{DoxyParamCaption}
-)}\hypertarget{backtracking_8c_a02c92c01fa54474a08e85cc2ba3c9c02}{}\label{backtracking_8c_a02c92c01fa54474a08e85cc2ba3c9c02}
+)}\hypertarget{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}{}\label{backtracking_8c_acda4bda9ca94105a8e392319b81d1f93}
 
 
 This functions resolve the {\itshape {\bfseries Chromatic number}} -\/ graph coloring problem using the {\itshape {\bfseries Backtracking}} algorithm. 
@@ -29,21 +29,23 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
 \hline
-{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+{\em num\+\_\+of\+\_\+nodes} & This parameter will give as the number of nodes \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-min\+\_\+colors -\/ Minimum number of colors for coloring graph nodes determined by the algorithm 
+Minimum number of colors for coloring graph nodes determined by the algorithm 
 \end{DoxyReturn}
 Function returns the minimum number of colors used to color the graph
 
-Set the color of the first node to be \textquotesingle{}1\textquotesingle{} N\+O\+TE\+: We can set any color to this node because its the first one who will be colored
+Set min\+\_\+colors to be equal {\bfseries 1}
 
-Set min\+\_\+colors to be equal \textquotesingle{}1\textquotesingle{} N\+O\+TE\+: Because of the first node we know that we will use minimum one color
+{\bfseries N\+O\+TE}\+: Because of the first node we know that we will use minimum one color
 
-Increase pointer start + number of nodes (columns) N\+O\+TE\+: We will skip the first row, so we need to increase the starting pointer
+Increase pointer start + number of nodes (columns)
+
+{\bfseries N\+O\+TE}\+: We will skip the first row, so we need to increase the starting pointer
 
 Start with searching and creating colors
 
@@ -66,4 +68,4 @@ If start color is bigger then min colors means that we need more colors, so we n
 
 Increase the position of the pointer
 
-Return minumum number of colors when algorithm is finished 
+Return minimum number of colors when algorithm is finished 

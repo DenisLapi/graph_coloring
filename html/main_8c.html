@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Denis Lapadatovic </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*graph_matrix</td><td>This pointer parameter will be provided in to the functions for resolving graph problem <b>*graph_matrix</b> is initialize out of this function. </td></tr>
+    <tr><td class="paramname">*graph_matrix</td><td>This pointer parameter will be provided in to the functions for resolving graph problem. <b>*graph_matrix</b> is initialize out of this function. </td></tr>
     <tr><td class="paramname">num_of_nodes</td><td>This variable will be provided in to the functions for resolving graph problem. <b>num_of_nodes</b> is initialize out of this function. </td></tr>
   </table>
   </dd>
@@ -158,7 +158,7 @@ Functions</h2></td></tr>
 <p>If user enter <b>1</b> resolve the problem using the <b>Backtracing</b> algorithm</p>
 <p>Run the function and save the final result in to the variable</p>
 <p>If user enter <b>2</b> resolve the problem using the <b>Welsh-Powell</b> algorithm</p>
-<p>Create all nodes data with 3 properties (needed for 'Welsh-Powell' algorithm )</p>
+<p>Create all nodes data with 3 properties (needed for <b>Welsh-Powell</b> algorithm )</p>
 <p>Run the function to initialize the nodes with ID, Sum of connections and Color</p>
 <p>Show nodes before sort</p>
 <p>Sort the nodes in descending order by number of connections per node</p>
@@ -184,19 +184,20 @@ Functions</h2></td></tr>
 <p>Variable used to save the number of nodes of our graph</p>
 <p>Pointer to the graph matrix. In this pointer we will initialize the grapg matrix</p>
 <p>Variable used for the menu selection. To choose between <b>Test</b> and <b>Custom</b> environment</p>
-<p>Check if program environment is selected. If 'TRUE' continue the program</p>
+<p>Check if program environment is selected. If <b>TRUE</b> continue the program</p>
 <p>Allocate the memory for graph matrix with N rows and N columns</p>
 <p>Let user to decide which environment wants to run Test - Load dummy data from files located in the folder <b>data</b> Custom - Create own graph</p>
 <p>Environment menu</p>
 <p>If user select the first environment <b>Test</b> run the code below</p>
-<p>Save the return value from the 'load_graph' function in <b>graph_matrix</b> pointer</p>
+<p>Save the return value from the <b>load_graph</b> function in <b>graph_matrix</b> pointer</p>
 <p>Set variable to <b>1</b> - means that environment is selected</p>
 <p>If user select the second environment <b>Custom</b> run the code below</p>
+<p>Let user enter the number of nodes for the graph and save it in <b>num_of_nodes</b> variable</p>
 <p>Call the function to create the graph </p><dl class="section warning"><dt>Warning</dt><dd>Graph matrix need to be created for this environment using the <b>create_graph</b> function</dd></dl>
 <p>Save the created graph in <b>graph_matrix</b> pointer</p>
 <p>Set variable to <b>1</b> - means that environment is selected</p>
 <p>If user select the other number for environment </p><dl class="section warning"><dt>Warning</dt><dd>Environment options are <b>1</b> for <b>TEST</b> <b>2</b> for <b>CUSTOM</b></dd></dl>
-<p>Show the graph_matrix;</p>
+<p>Show the graph_matrix</p>
 <p>Show the menu to select the algorithm</p>
 <p>At the end of the program remove the <b>graph matrix</b> pointer from the memory </p>
 

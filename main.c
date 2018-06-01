@@ -32,7 +32,7 @@
  * <b>Windows</b>: \code{.c} Application \endcode
  *
  * \subsection run_user_frendly Run without the terminal
- * To start the problem in user-frendly manner, open the project directory and click on <b>Application</b>
+ * To start the program in user-frendly manner, open the project directory and click on <b>Application</b>
  *
  * \section open_source Open source
  * This project is <i>open source</i>. You can check the full project code on this link: <a href="https://github.com/DenisLapi/graph_coloring">Github</a>
@@ -61,7 +61,7 @@ int main()
     int *graph_matrix;
     /// Variable used for the menu selection. To choose between <b>Test</b> and <b>Custom</b> environment
     int menu_option;
-    /// Check if program environment is selected. If 'TRUE' continue the program
+    /// Check if program environment is selected. If <b>TRUE</b> continue the program
     int is_env_selected = 0;
 
     /// Allocate the memory for graph matrix with N rows and N columns
@@ -80,7 +80,7 @@ int main()
     if(menu_option == 1) {
         /// If user select the first environment <b>Test</b> run the code below
         printf("\nYou chose the 'TEST' environment");
-        /// Save the return value from the 'load_graph' function in <b>graph_matrix</b> pointer
+        /// Save the return value from the <b>load_graph</b> function in <b>graph_matrix</b> pointer
         graph_matrix = load_graph(graph_matrix, &num_of_nodes);
         /// Set variable to <b>1</b> - means that environment is selected
         is_env_selected = 1;
@@ -89,7 +89,7 @@ int main()
         /// If user select the second environment <b>Custom</b> run the code below
         printf("\nYou chose the 'CUSTOM' environment");
         printf("\n\nEnter the number of nodes: ");
-        // Let user enter the number of nodes for the graph and save it in <b>num_of_nodes</b> variable
+        /// Let user enter the number of nodes for the graph and save it in <b>num_of_nodes</b> variable
         scanf("%d", &num_of_nodes);
         /*!
         *   Call the function to create the graph
@@ -110,7 +110,7 @@ int main()
 
     if(is_env_selected) {
 
-        /// Show the graph_matrix;
+        /// Show the graph_matrix
         show_graph_matrix(graph_matrix, num_of_nodes);
         /// Show the menu to select the algorithm
         algorithm_menu(graph_matrix, num_of_nodes);
@@ -124,13 +124,10 @@ int main()
 }
 
 /*!
-*  \fn void algorithm_menu(int *graph_matrix, int num_of_nodes)
 *  \brief This function will be used to give the posibility to the user to select the algorithm that he/she wants to use for resolving the graph coloring problem.
 *  \author Denis Lapadatovic
-*  \param *graph_matrix This pointer parameter will be provided in to the functions for resolving graph problem
-*  <b>*graph_matrix</b> is initialize out of this function.
-*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-*  <b>num_of_nodes</b> is initialize out of this function.
+*  \param *graph_matrix This pointer parameter will be provided in to the functions for resolving graph problem. <b>*graph_matrix</b> is initialize out of this function.
+*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem. <b>num_of_nodes</b> is initialize out of this function.
 *  \return Nothing
 */
 void algorithm_menu(int *graph_matrix, int num_of_nodes) {
@@ -156,7 +153,7 @@ void algorithm_menu(int *graph_matrix, int num_of_nodes) {
         /// If user enter <b>2</b> resolve the problem using the <b>Welsh-Powell</b> algorithm
         printf("\nYou selected the Welsh-Powell algorithm\n");
 
-        /// Create all nodes data with 3 properties (needed for 'Welsh-Powell' algorithm )
+        /// Create all nodes data with 3 properties (needed for <b>Welsh-Powell</b> algorithm )
         struct node_struct node_detail[num_of_nodes];
         /// Run the function to initialize the nodes with ID, Sum of connections and Color
         create_nodes(&node_detail[0], num_of_nodes, graph_matrix);

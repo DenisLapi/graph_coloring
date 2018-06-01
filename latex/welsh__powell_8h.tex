@@ -30,15 +30,15 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em node\+\_\+id} & Input variable used to identify the ID of the node we want to get the color \\
+{\em node\+\_\+id} & Input variable used to identify the node using the unique ID \\
 \hline
 {\em $\ast$nodes} & This variable is used for the iteration through the nodes with properties \\
 \hline
-{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to get the number of nodes. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-color Return the color of the node with ID passed in the function 
+The color of the node with ID passed in the function 
 \end{DoxyReturn}
 Default value for color
 
@@ -60,15 +60,15 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
 \hline
-{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to get the number of nodes. \\
 \hline
 {\em $\ast$nodes} & This variable is used for the iteration through the nodes with properties \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-min\+\_\+colors -\/ Minimum number of colors for coloring graph nodes determined by the algorithm 
+Minimum number of colors for coloring graph nodes determined by the algorithm 
 \end{DoxyReturn}
 Select the node from 0 -\/ num\+\_\+of nodes
 
@@ -80,7 +80,7 @@ Go through the the row ID $>$ columns
 
 Get the values from the column (row cell)
 
-Check if nodes are conneted (row ID and column ID) \+: 0 -\/ not connected; $>$ 0 -\/ connected
+Check if nodes are conneted (row ID and column ID) \+: 0 -\/ not connected $\vert$ $>$ 0 -\/ connected
 
 Nodes are connected get the color of the node that we compare
 
@@ -88,4 +88,4 @@ Chech if color of the neighbor node is the same as current \textquotesingle{}min
 
 If node can be colored with min color set the color
 
-Return minumum number of colors when algorithm is finished 
+Return minimum number of colors when algorithm is finished 

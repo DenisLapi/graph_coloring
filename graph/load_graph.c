@@ -4,19 +4,13 @@
 #include "./load_graph.h"
 
 /*!
-*  \fn int *load_graph(int *graph_matrix, int *num_of_nodes)
 *  \brief This functions load the test graph matrix from the files. This funtion is used in <b>Test</b> environment
 *  \author Denis Lapadatovic
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
-*  <b>*graph_matrix</b> is initialize out of this function.
 *  \param num_of_nodes This parameter will be used to add the number of nodes.
-*  <b>*num_of_nodes</b> is initialize in this function.
 *  \return graph_matrix - Pointer to the new created graph matrix
 */
 int *load_graph(int *graph_matrix, int *num_of_nodes) {
-
-	/// *graph_matrix - In this pointer we will add the data from our file
-	/// *num_of_nodes - In this pointer we will add the number of nodes from the file data, so this number can be accessible outside the function
 
 	FILE *data;
 	int new_size;
@@ -32,8 +26,8 @@ int *load_graph(int *graph_matrix, int *num_of_nodes) {
 
 	/*!
 	*
-	* \brief Solution for fixing the problem with the string with 'space'
-	*	LINK: <a href="https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx">Solution</a>
+	* \brief Solution for fixing the problem with the string with " " character :
+	*	<a href="https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx">Solution</a>
 	*
 	*/
 
@@ -78,9 +72,6 @@ int *load_graph(int *graph_matrix, int *num_of_nodes) {
 
 	    	/// Get the value from file as a string
 	    	fscanf(data, "%s", file_data);
-
-	    	/// Show matrix string as a number using 'atoi()'
-	    	/// printf("%d,", atoi(file_data));
 
 	    	/// Convert string value to integer and add to matrix
 	    	*graph_matrix_init = atoi(file_data);

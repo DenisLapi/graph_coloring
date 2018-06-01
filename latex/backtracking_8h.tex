@@ -27,21 +27,23 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
 \hline
-{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+{\em num\+\_\+of\+\_\+nodes} & This parameter will give as the number of nodes \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-min\+\_\+colors -\/ Minimum number of colors for coloring graph nodes determined by the algorithm 
+Minimum number of colors for coloring graph nodes determined by the algorithm 
 \end{DoxyReturn}
 Function returns the minimum number of colors used to color the graph
 
-Set the color of the first node to be \textquotesingle{}1\textquotesingle{} N\+O\+TE\+: We can set any color to this node because its the first one who will be colored
+Set min\+\_\+colors to be equal {\bfseries 1}
 
-Set min\+\_\+colors to be equal \textquotesingle{}1\textquotesingle{} N\+O\+TE\+: Because of the first node we know that we will use minimum one color
+{\bfseries N\+O\+TE}\+: Because of the first node we know that we will use minimum one color
 
-Increase pointer start + number of nodes (columns) N\+O\+TE\+: We will skip the first row, so we need to increase the starting pointer
+Increase pointer start + number of nodes (columns)
+
+{\bfseries N\+O\+TE}\+: We will skip the first row, so we need to increase the starting pointer
 
 Start with searching and creating colors
 
@@ -64,4 +66,4 @@ If start color is bigger then min colors means that we need more colors, so we n
 
 Increase the position of the pointer
 
-Return minumum number of colors when algorithm is finished 
+Return minimum number of colors when algorithm is finished 

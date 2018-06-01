@@ -52,7 +52,7 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$graph\+\_\+matrix} & This pointer parameter will be provided in to the functions for resolving graph problem {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+{\em $\ast$graph\+\_\+matrix} & This pointer parameter will be provided in to the functions for resolving graph problem. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
 \hline
 {\em num\+\_\+of\+\_\+nodes} & This variable will be provided in to the functions for resolving graph problem. {\bfseries num\+\_\+of\+\_\+nodes} is initialize out of this function. \\
 \hline
@@ -74,7 +74,7 @@ Run the function and save the final result in to the variable
 
 If user enter {\bfseries 2} resolve the problem using the {\bfseries Welsh-\/\+Powell} algorithm
 
-Create all nodes data with 3 properties (needed for \textquotesingle{}Welsh-\/\+Powell\textquotesingle{} algorithm )
+Create all nodes data with 3 properties (needed for {\bfseries Welsh-\/\+Powell} algorithm )
 
 Run the function to initialize the nodes with ID, Sum of connections and Color
 
@@ -104,7 +104,7 @@ Pointer to the graph matrix. In this pointer we will initialize the grapg matrix
 
 Variable used for the menu selection. To choose between {\bfseries Test} and {\bfseries Custom} environment
 
-Check if program environment is selected. If \textquotesingle{}T\+R\+UE\textquotesingle{} continue the program
+Check if program environment is selected. If {\bfseries T\+R\+UE} continue the program
 
 Allocate the memory for graph matrix with N rows and N columns
 
@@ -114,11 +114,13 @@ Environment menu
 
 If user select the first environment {\bfseries Test} run the code below
 
-Save the return value from the \textquotesingle{}load\+\_\+graph\textquotesingle{} function in {\bfseries graph\+\_\+matrix} pointer
+Save the return value from the {\bfseries load\+\_\+graph} function in {\bfseries graph\+\_\+matrix} pointer
 
 Set variable to {\bfseries 1} -\/ means that environment is selected
 
 If user select the second environment {\bfseries Custom} run the code below
+
+Let user enter the number of nodes for the graph and save it in {\bfseries num\+\_\+of\+\_\+nodes} variable
 
 Call the function to create the graph \begin{DoxyWarning}{Warning}
 Graph matrix need to be created for this environment using the {\bfseries create\+\_\+graph} function
@@ -130,7 +132,7 @@ Set variable to {\bfseries 1} -\/ means that environment is selected
 If user select the other number for environment \begin{DoxyWarning}{Warning}
 Environment options are {\bfseries 1} for {\bfseries T\+E\+ST} {\bfseries 2} for {\bfseries C\+U\+S\+T\+OM}
 \end{DoxyWarning}
-Show the graph\+\_\+matrix;
+Show the graph\+\_\+matrix
 
 Show the menu to select the algorithm
 

@@ -27,17 +27,15 @@ Denis Lapadatovic
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. {\bfseries $\ast$graph\+\_\+matrix} is initialize out of this function. \\
+{\em $\ast$graph\+\_\+matrix} & Using this parameter we have the access to the graph matrix. \\
 \hline
-{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. {\bfseries $\ast$num\+\_\+of\+\_\+nodes} is initialize in this function. \\
+{\em num\+\_\+of\+\_\+nodes} & This parameter will be used to add the number of nodes. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 graph\+\_\+matrix -\/ Pointer to the new created graph matrix 
 \end{DoxyReturn}
-$\ast$graph\+\_\+matrix -\/ In this pointer we will add the data from our file $\ast$num\+\_\+of\+\_\+nodes -\/ In this pointer we will add the number of nodes from the file data, so this number can be accessible outside the function
-
-Solution for fixing the problem with the string with \textquotesingle{}space\textquotesingle{} L\+I\+NK\+: \href{https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx}{\tt Solution}
+Solution for fixing the problem with the string with \char`\"{} \char`\"{} character \+: \href{https://www.includehelp.com/c/c-program-to-read-string-with-spaces-using-scanf-function.aspx}{\tt Solution}
 
 temp statement to clear buffer
 
@@ -62,8 +60,6 @@ Crete the pointer for iteration
 Go through the graph matrix from file and create the \textquotesingle{}graph\+\_\+matrix\+\_\+init\textquotesingle{}
 
 Get the value from file as a string
-
-Show matrix string as a number using \textquotesingle{}atoi()\textquotesingle{} printf(\char`\"{}\%d,\char`\"{}, atoi(file\+\_\+data));
 
 Convert string value to integer and add to matrix
 

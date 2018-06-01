@@ -3,14 +3,11 @@
 #include "create_graph.h"
 
 /*!
-*  \fn int *create_graph(int *graph_matrix, int *num_of_nodes)
 *  \brief This functions create the graph matrix. User enter the data for the graph. This funtion is used in <b>Custom</b> environment
 *  \author Denis Lapadatovic
-*  \param *graph_matrix Using this parameter we have the access to the graph matrix.
-*  <b>*graph_matrix</b> is initialize out of this function.
-*  \param num_of_nodes This parameter will be used to add the number of nodes.
-*  <b>*num_of_nodes</b> is initialize in this function.
-*  \return new_graph_matrix - Pointer to the new created graph matrix
+*  \param *graph_matrix Using this parameter we have the access to the graph matrix. <b>*graph_matrix</b> is initialize out of this function.
+*  \param *num_of_nodes This parameter will be used to add the number of nodes.
+*  \return Pointer to the new created graph matrix
 */
 int *create_graph(int *graph_matrix, int *num_of_nodes) {
 

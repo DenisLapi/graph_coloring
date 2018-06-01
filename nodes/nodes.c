@@ -3,12 +3,10 @@
 #include "nodes.h"
 
 /*!
-*  \fn void show_nodes_data(struct node_struct *nodes, int num_of_nodes)
 *  \brief This function shows the details for the nodes in one list
 *  \author Denis Lapadatovic
 *  \param *nodes This variable is used for the iteration and showing the nodes with properties
-*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-  <b>num_of_nodes</b> is initialize out of this function.
+*  \param num_of_nodes This variable give us the number of nodes. <b>num_of_nodes</b> is initialize out of this function.
 *  \return Nothing
 */
 void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
@@ -25,12 +23,10 @@ void show_nodes_data(struct node_struct *nodes, int num_of_nodes) {
 }
 
 /*!
-*  \fn void create_nodes(struct node_struct *nodes, int num_of_nodes, int *graph_matrix)
 *  \brief This function initialize/create the nodes with default values
 *  \author Denis Lapadatovic
 *  \param *nodes This variable is used for the iteration and showing the nodes with properties
-*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-*  <b>num_of_nodes</b> is initialize out of this function.
+*  \param num_of_nodes This variable give us the number of nodes.
 *  \param *graph_matrix Using this parameter we have the access to the graph matrix.
 *  \return Nothing
 */
@@ -65,13 +61,10 @@ void create_nodes(struct node_struct *nodes, int num_of_nodes, int *graph_matrix
 }
 
 /*!
-*  \fn void sort_nodes(struct node_struct *nodes, int num_of_nodes)
 *  \brief This function sort the nodes in descending order by sum of connections.
 *  \author Denis Lapadatovic
 *  \param *nodes This variable is used for the iteration and showing the nodes with properties
-*  \param num_of_nodes This variable will be provided in to the functions for resolving graph problem.
-*  <b>num_of_nodes</b> is initialize out of this function.
-*  \param *graph_matrix Using this parameter we have the access to the graph matrix.
+*  \param num_of_nodes This variable give us the number of nodes.
 *  \return Nothing
 */
 void sort_nodes(struct node_struct *nodes, int num_of_nodes) {
